@@ -12,10 +12,10 @@ public class Gym {
     private int idGym;
     @Column(name = "nameGym", length = 30, nullable = false)
     private String nameGym;
-    @Column(name = "codeGym", length = 5, nullable = false)
+    @Column(name = "codeGym", length = 10, nullable = false)
     private String codeGym;
     @Column(name = "rucGym", length = 11, nullable = false)
-    private int rucGym;
+    private String rucGym;
     @Column(name = "rsGym", length = 30, nullable = false)
     private String rsGym;
 
@@ -23,7 +23,7 @@ public class Gym {
 
     }
 
-    public Gym(int idGym, String nameGym, String codeGym, int rucGym, String rsGym) {
+    public Gym(int idGym, String nameGym, String codeGym, String rucGym, String rsGym) {
         this.idGym = idGym;
         this.nameGym = nameGym;
         this.codeGym = codeGym;
@@ -55,11 +55,11 @@ public class Gym {
         this.codeGym = codeGym;
     }
 
-    public int getRucGym() {
+    public String getRucGym() {
         return rucGym;
     }
 
-    public void setRucGym(int rucGym) {
+    public void setRucGym(String rucGym) {
         this.rucGym = rucGym;
     }
 
