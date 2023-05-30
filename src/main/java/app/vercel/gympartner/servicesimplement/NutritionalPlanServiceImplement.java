@@ -1,17 +1,17 @@
 package app.vercel.gympartner.servicesimplement;
 
 import app.vercel.gympartner.entities.NutritionalPlan;
-import app.vercel.gympartner.repositories.iNutritionalPlanRepository;
-import app.vercel.gympartner.services.iNutritionalPlanService;
+import app.vercel.gympartner.repositories.INutritionalPlanRepository;
+import app.vercel.gympartner.services.INutritionalPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class NutritionalPlanServiceImplement implements iNutritionalPlanService {
+public class NutritionalPlanServiceImplement implements INutritionalPlanService {
     @Autowired
-    private iNutritionalPlanRepository npR;
+    private INutritionalPlanRepository npR;
     @Override
     public void  insert (NutritionalPlan nutritionalPlan){
         npR.save(nutritionalPlan);

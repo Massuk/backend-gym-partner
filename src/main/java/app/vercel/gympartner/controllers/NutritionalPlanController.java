@@ -2,7 +2,7 @@ package app.vercel.gympartner.controllers;
 
 import app.vercel.gympartner.dtos.NutritionalPlanDTO;
 import app.vercel.gympartner.entities.NutritionalPlan;
-import app.vercel.gympartner.services.iNutritionalPlanService;
+import app.vercel.gympartner.services.INutritionalPlanService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/nutritionalPlans")
 public class NutritionalPlanController {
     @Autowired
-    private iNutritionalPlanService npS;
+    private INutritionalPlanService npS;
     @GetMapping
     public List<NutritionalPlanDTO> list() {
         return npS.list().stream().map(x->{
