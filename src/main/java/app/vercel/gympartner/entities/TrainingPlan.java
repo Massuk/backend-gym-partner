@@ -2,6 +2,8 @@ package app.vercel.gympartner.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "trainingPlans")
@@ -9,7 +11,7 @@ public class TrainingPlan {
     // --- ORM Setup --- //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idTrainingPlan;
     @Column(name = "title", length = 30, nullable = false)
     private String title;
     @Column(name = "description", length = 150, nullable = false)
@@ -25,11 +27,13 @@ public class TrainingPlan {
     @Column(name = "enable", nullable = false)
     private boolean enable;
 
+
     // --- Constructors --- //
     public TrainingPlan() {
     }
-    public TrainingPlan(int id, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean enable) {
-        this.id = id;
+
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean enable) {
+        this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
         this.objective = objective;
@@ -40,12 +44,15 @@ public class TrainingPlan {
     }
 
     // --- Getters and Setters ---//
-    public int getId() {
-        return id;
+
+    public int getIdTrainingPlan() {
+        return idTrainingPlan;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setIdTrainingPlan(int idTrainingPlan) {
+        this.idTrainingPlan = idTrainingPlan;
     }
+
     public String getTitle() {
         return title;
     }
@@ -88,4 +95,5 @@ public class TrainingPlan {
     public void setEnable(boolean enable) {
         this.enable = enable;
     }
+
 }

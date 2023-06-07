@@ -1,10 +1,14 @@
 package app.vercel.gympartner.dtos;
 
+import app.vercel.gympartner.entities.Routine;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TrainingPlanDTO {
 
-    private int id;
+    private int idTrainingPlan;
     private String title;
     private String description;
     private String objective;
@@ -14,11 +18,13 @@ public class TrainingPlanDTO {
     private boolean enable;
 
     // --- Getters and Setters ---//
-    public int getId() {
-        return id;
+
+    public int getIdTrainingPlan() {
+        return idTrainingPlan;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setIdTrainingPlan(int idTrainingPlan) {
+        this.idTrainingPlan = idTrainingPlan;
     }
     public String getTitle() {
         return title;
@@ -62,4 +68,5 @@ public class TrainingPlanDTO {
     public void setEnable(boolean enable) {
         this.enable = enable;
     }
+
 }

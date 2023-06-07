@@ -1,6 +1,8 @@
 package app.vercel.gympartner.servicesimplement;
 
+import app.vercel.gympartner.entities.Routine;
 import app.vercel.gympartner.entities.TrainingPlan;
+import app.vercel.gympartner.repositories.IRoutineRepository;
 import app.vercel.gympartner.repositories.ITrainigPlanRepository;
 import app.vercel.gympartner.services.ITrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
