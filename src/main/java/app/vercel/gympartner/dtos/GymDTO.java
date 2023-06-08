@@ -6,7 +6,7 @@ public class GymDTO {
     private int idGym;
     private String nameGym;
     private String codeGym;
-    private int rucGym;
+    private String rucGym;
     private String rsGym;
 
     public int getIdGym() {
@@ -33,11 +33,11 @@ public class GymDTO {
         this.codeGym = codeGym;
     }
 
-    public int getRucGym() {
+    public String getRucGym() {
         return rucGym;
     }
 
-    public void setRucGym(int rucGym) {
+    public void setRucGym(String rucGym) {
         this.rucGym = rucGym;
     }
 
