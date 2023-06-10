@@ -1,5 +1,7 @@
 package app.vercel.gympartner.dtos;
 
+import app.vercel.gympartner.entities.Routine;
+
 public class ExerciseDTO {
 
     private int idExercise;
@@ -7,6 +9,7 @@ public class ExerciseDTO {
     private int repetitionsExercise;
     private int seriesExercise;
     private int kilogramsExercise;
+    private Routine routine;
 
     public int getIdExercise() {
         return idExercise;
@@ -46,5 +49,13 @@ public class ExerciseDTO {
 
     public void setKilogramsExercise(int kilogramsExercise) {
         this.kilogramsExercise = kilogramsExercise;
+    }
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
     }
 }

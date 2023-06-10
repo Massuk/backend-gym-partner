@@ -24,15 +24,15 @@ public class TrainingPlan {
     private LocalDate startDate;
     @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
-    @Column(name = "enable", nullable = false)
-    private boolean enable;
+    @Column(name = "status", nullable = false)
+    private boolean status;
 
 
     // --- Constructors --- //
     public TrainingPlan() {
     }
 
-    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean enable) {
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean status) {
         this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
@@ -40,11 +40,10 @@ public class TrainingPlan {
         this.level = level;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.enable = enable;
+        this.status = status;
     }
 
     // --- Getters and Setters ---//
-
     public int getIdTrainingPlan() {
         return idTrainingPlan;
     }
@@ -89,11 +88,12 @@ public class TrainingPlan {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-    public boolean isEnable() {
-        return enable;
-    }
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+
+    public boolean isStatus() {
+        return status;
     }
 
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 }

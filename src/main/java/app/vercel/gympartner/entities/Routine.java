@@ -12,18 +12,24 @@ public class Routine {
     private String title;
     @Column(name="day", length = 20, nullable = false)
     private String day;
+    @Column(name="description", length = 150, nullable = false)
+    private String description;
+    @Column(name = "status", nullable = false)
+    private boolean status;
     @ManyToOne
-    @JoinColumn(name = "id_tplan", nullable = false, foreignKey = @ForeignKey(name = "id_routine_tplan"))
+    @JoinColumn(name = "id_tplan")
     private TrainingPlan tPlan;
 
     public Routine() {
     }
 
-    public Routine(int idRoutine, String title, String day, TrainingPlan tPlan) {
+    public Routine(int idRoutine, String title, String day, TrainingPlan tPlan, String description, boolean status) {
         this.idRoutine = idRoutine;
         this.title = title;
         this.day = day;
         this.tPlan = tPlan;
+        this.description = description;
+        this.status = status;
     }
 
     public int getIdRoutine() {
@@ -56,5 +62,13 @@ public class Routine {
 
     public void settPlan(TrainingPlan tPlan) {
         this.tPlan = tPlan;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
