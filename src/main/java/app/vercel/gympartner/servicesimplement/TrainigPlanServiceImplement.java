@@ -36,4 +36,9 @@ public class TrainigPlanServiceImplement implements ITrainingPlanService {
     public TrainingPlan listId(int idTplan) {
         return tpR.findById(idTplan).orElse(new TrainingPlan());
     }
+
+    @Override
+    public void ocultarPlanEntrenamiento(int id) {
+        tpR.ocultarPlanEntrenamiento(id);
+    }
 }

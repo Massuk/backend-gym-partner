@@ -9,6 +9,7 @@ public class ExerciseDTO {
     private int repetitionsExercise;
     private int seriesExercise;
     private int kilogramsExercise;
+    private boolean status;
     private Routine routine;
 
     public int getIdExercise() {
@@ -49,6 +50,14 @@ public class ExerciseDTO {
 
     public void setKilogramsExercise(int kilogramsExercise) {
         this.kilogramsExercise = kilogramsExercise;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public Routine getRoutine() {

@@ -25,4 +25,9 @@ public class RoutineServiceImplement implements IRoutineService {
     public void delete(int idTplan) {
         rR.deleteById(idTplan);
     }
+
+    @Override
+    public void ocultarEjercicio(int id) {
+        rR.ocultarEjercicio(id);
+    }
 }

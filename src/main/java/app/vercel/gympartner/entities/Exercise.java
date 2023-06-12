@@ -18,6 +18,8 @@ public class Exercise {
     private int seriesExercise;
     @Column(name = "kilogramsExercise",length = 2, nullable = false)
     private int kilogramsExercise;
+    @Column(name = "statusExercise")
+    private boolean status;
     @ManyToOne
     @JoinColumn(name = "id_routine")
     private Routine routine;
@@ -30,6 +32,7 @@ public class Exercise {
         this.seriesExercise = seriesExercise;
         this.kilogramsExercise = kilogramsExercise;
         this.routine = routine;
+        this.status = true;
     }
 
     public int getIdExercise() {
@@ -77,5 +80,13 @@ public class Exercise {
 
     public void setRoutine(Routine routine) {
         this.routine = routine;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

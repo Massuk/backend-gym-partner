@@ -32,11 +32,12 @@ public class ExerciseController {
 
         }).collect(Collectors.toList());
     }
-
+    /*
     @DeleteMapping("/{id}")
     public void delete(@PathVariable ("id")Integer id){
         eS.delete(id);
     }
+    */
 
     @GetMapping("/{id}")
     public ExerciseDTO listid(@PathVariable("id")Integer id){
@@ -50,5 +51,9 @@ public class ExerciseController {
         ModelMapper m = new ModelMapper();
         Exercise e = m.map(dto,Exercise.class);
         eS.insert(e);
+    }
+    @PutMapping("/{id}")
+    public void hideExercise(@PathVariable("id") Integer idExercise){
+        eS.hideExercise(idExercise);
     }
 }

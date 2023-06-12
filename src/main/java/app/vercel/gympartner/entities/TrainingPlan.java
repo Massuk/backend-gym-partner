@@ -32,7 +32,7 @@ public class TrainingPlan {
     public TrainingPlan() {
     }
 
-    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean status) {
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate) {
         this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
@@ -40,7 +40,7 @@ public class TrainingPlan {
         this.level = level;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.status = status;
+        this.status = true;
     }
 
     // --- Getters and Setters ---//
