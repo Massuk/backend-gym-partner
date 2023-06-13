@@ -24,6 +24,8 @@ public class NutritionalPlan {
     private LocalDate endDateNutritionalPlan;
     @Column (name = "recommendationsNutritionalPlan", length = 280, nullable = false)
     private String recommendationsNutritionalPlan;
+    @Column(name = "status", nullable = false)
+    private boolean status;
 
     public NutritionalPlan() {
     }
@@ -37,6 +39,7 @@ public class NutritionalPlan {
         this.startDateNutritionalPlan = startDateNutritionalPlan;
         this.endDateNutritionalPlan = endDateNutritionalPlan;
         this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
+        this.status = true;
     }
 
     public int getIdNutritionalPlan() {
@@ -101,5 +104,12 @@ public class NutritionalPlan {
 
     public void setRecommendationsNutritionalPlan(String recommendationsNutritionalPlan) {
         this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
+    }
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
