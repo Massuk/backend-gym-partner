@@ -10,13 +10,18 @@ public class Role {
     private int idRole;
     @Column(name = "name", length = 50, nullable = false)
     private String name;
+    @Column(name = "status", nullable = false)
+    private boolean status;
 
     public Role() {
     }
-    public Role(int idRole, String name) {
+
+    public Role(int idRole, String name, boolean status) {
         this.idRole = idRole;
         this.name = name;
+        this.status = status;
     }
+
     public int getIdRole() {
         return idRole;
     }
@@ -28,5 +33,11 @@ public class Role {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public boolean isStatus() {
+        return status;
+    }
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
