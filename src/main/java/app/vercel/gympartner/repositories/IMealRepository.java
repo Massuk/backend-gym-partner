@@ -1,6 +1,6 @@
 package app.vercel.gympartner.repositories;
 
-import app.vercel.gympartner.entities.Food;
+import app.vercel.gympartner.entities.Meal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface IFoodRepository extends JpaRepository<Food, Integer> {
+public interface IMealRepository extends JpaRepository<Meal, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Food f SET f.status = false WHERE f.idFood =:id")
-    void ocultarAlimento(@Param("id") Integer id);
+    @Query("UPDATE Meal m SET m.status = false WHERE m.idMeal =:id")
+    void ocultarComida(@Param("id") Integer id);
 }

@@ -16,13 +16,7 @@ public class FoodController {
     @Autowired
     private IFoodService fS;
 
-    @PostMapping
-    public void create(@RequestBody FoodDTO dto){
-        ModelMapper m = new ModelMapper();
-        Food f = m.map(dto, Food.class);
-        fS.create(f);
-    }
-
+    // List all Food
     @GetMapping
     public List<FoodDTO> list(){
         return fS.list().stream().map(x ->{
@@ -31,11 +25,7 @@ public class FoodController {
         }).collect(Collectors.toList());
     }
 
-    @DeleteMapping("/{id}")
-    public void delete (@PathVariable("id") Integer id){
-        fS.delete(id);
-    }
-
+    // List Food by ID
     @GetMapping("/{id}")
     public FoodDTO listID(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
@@ -43,10 +33,33 @@ public class FoodController {
         return dto;
     }
 
+    // Create Food
+    @PostMapping
+    public void create(@RequestBody FoodDTO dto){
+        ModelMapper m = new ModelMapper();
+        Food f = m.map(dto, Food.class);
+        fS.create(f);
+    }
+
+    // Update Food
     @PutMapping
     public void update(@RequestBody FoodDTO dto){
         ModelMapper m = new ModelMapper();
         Food f = m.map(dto, Food.class);
         fS.create(f);
     }
+
+    //HIDE Food
+    @PutMapping("/{id}")
+    public void hideFood(@PathVariable("id") Integer idFood){
+        fS.ocultarAlimento(idFood);
+    }
+
+    /* Delete Food by ID
+    @DeleteMapping("/{id}")
+    public void delete (@PathVariable("id") Integer id){
+        fS.delete(id);
+    }
+     */
+
 }
