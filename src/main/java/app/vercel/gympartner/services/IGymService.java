@@ -12,4 +12,5 @@ public interface IGymService {
     public void delete(int idGym);
 
     public Gym listId(int idGym);
+    void ocultarGym(int id);
 }

@@ -2,6 +2,8 @@ package app.vercel.gympartner.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "trainingPlans")
@@ -9,7 +11,7 @@ public class TrainingPlan {
     // --- ORM Setup --- //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idTrainingPlan;
     @Column(name = "title", length = 30, nullable = false)
     private String title;
     @Column(name = "description", length = 150, nullable = false)
@@ -22,30 +24,34 @@ public class TrainingPlan {
     private LocalDate startDate;
     @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
-    @Column(name = "enable", nullable = false)
-    private boolean enable;
+    @Column(name = "status", nullable = false)
+    private boolean status;
+
 
     // --- Constructors --- //
     public TrainingPlan() {
     }
-    public TrainingPlan(int id, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean enable) {
-        this.id = id;
+
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate) {
+        this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
         this.objective = objective;
         this.level = level;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.enable = enable;
+        this.status = true;
     }
 
     // --- Getters and Setters ---//
-    public int getId() {
-        return id;
+    public int getIdTrainingPlan() {
+        return idTrainingPlan;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setIdTrainingPlan(int idTrainingPlan) {
+        this.idTrainingPlan = idTrainingPlan;
     }
+
     public String getTitle() {
         return title;
     }
@@ -82,10 +88,12 @@ public class TrainingPlan {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-    public boolean isEnable() {
-        return enable;
+
+    public boolean isStatus() {
+        return status;
     }
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

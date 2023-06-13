@@ -49,4 +49,8 @@ public class GymController {
         Gym g = m.map(dto, Gym.class);
         gS.create(g);
     }
+    @PutMapping("/{id}")
+    public void hideGym(@PathVariable("id") Integer id){
+        gS.ocultarGym(id);
+    }
 }

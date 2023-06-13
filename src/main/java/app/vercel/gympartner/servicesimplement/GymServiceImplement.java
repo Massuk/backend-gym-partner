@@ -31,4 +31,9 @@ public class GymServiceImplement implements IGymService {
     public Gym listId(int idGym) {
         return gR.findById(idGym).orElse(new Gym());
     }
+
+    @Override
+    public void ocultarGym(int id) {
+        gR.ocultarGym(id);
+    }
 }

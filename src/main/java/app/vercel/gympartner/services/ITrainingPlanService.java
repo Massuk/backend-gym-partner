@@ -9,4 +9,5 @@ public interface ITrainingPlanService {
     List<TrainingPlan> list();
     public void delete(int idTplan);
     public TrainingPlan listId(int idTplan);
+    void ocultarPlanEntrenamiento(int id);
 }
