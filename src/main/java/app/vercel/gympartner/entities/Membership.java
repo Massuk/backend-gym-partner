@@ -10,9 +10,13 @@ public class Membership {
     private int idMembership;
     @Column(name = "name", length = 30, nullable = false)
     private String name;
+    @Column(name = "trainerCapacity", nullable = false)
     private int trainerCapacity;
+    @Column(name = "nutriCapacity", nullable = false)
     private int nutriCapacity;
+    @Column(name = "clientsCapacity", nullable = false)
     private int clientsCapacity;
+    @Column(name = "price", nullable = false)
     private float price;
 
     public Membership() {
