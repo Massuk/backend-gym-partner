@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ITrainigPlanRepository extends JpaRepository<TrainingPlan, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE TrainingPlan tp SET tp.status = false WHERE tp.idTrainingPlan =:id")
+    @Query("UPDATE TrainingPlan tp SET tp.hide = true WHERE tp.idTrainingPlan =:id")
     void ocultarPlanEntrenamiento(@Param("id") Integer id);
 }
