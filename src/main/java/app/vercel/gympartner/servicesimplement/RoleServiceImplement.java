@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IRoleServiceImplement implements IRoleService {
+public class RoleServiceImplement implements IRoleService {
     @Autowired
     private IRoleRepository rR;
 
@@ -17,19 +17,16 @@ public class IRoleServiceImplement implements IRoleService {
     public void insert(Role role) {
         rR.save(role);
     }
-
     @Override
     public List<Role> list() {
         return rR.findAll();
     }
-
     @Override
     public Role listId(int id) {
         return rR.findById(id).orElse(new Role());
     }
-
     @Override
-    public void disable(int id) {
-        rR.disable(id);
+    public void hideRole(int id) {
+        rR.hideRole(id);
     }
 }

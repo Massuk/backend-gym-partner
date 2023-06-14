@@ -40,8 +40,8 @@ public class RoleController {
         Role r = m.map(dto, Role.class);
         rS.insert(r);
     }
-    @PutMapping("/{id}")
-    public void disable(@PathVariable("id") Integer id){
-        rS.disable(id);
+    @PutMapping("/hide/{id}")
+    public void hideRoleByID(@PathVariable("id") Integer id){
+        rS.hideRole(id);
     }
 }

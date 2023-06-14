@@ -25,7 +25,7 @@ public class OwnerServiceImplement implements IOwnerService {
         return oR.findById(id).orElse(new Owner());
     }
     @Override
-    public void disable(int id) {
-        oR.disable(id);
+    public void hideOwner(int id) {
+        oR.hideOwner(id);
     }
 }

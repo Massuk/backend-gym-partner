@@ -27,15 +27,17 @@ public class User {
     private String email;
     @Column(name = "dni", length = 8,nullable = false)
     private String dni;
-    @Column(name = "status", nullable = false)
-    private boolean status;
+    @Column(name = "hide", nullable = false)
+    private boolean hide;
+    @Column(name = "password", length = 250, nullable = false)
+    private String password;
     @ManyToOne
     @JoinColumn(name = "idRole")
     private Role role;
 
     public User() {
     }
-    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean status, Role role) {
+    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role) {
         this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
@@ -45,7 +47,8 @@ public class User {
         this.cellphone = cellphone;
         this.email = email;
         this.dni = dni;
-        this.status = status;
+        this.hide = hide;
+        this.password = password;
         this.role = role;
     }
 
@@ -103,11 +106,17 @@ public class User {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    public boolean isStatus() {
-        return status;
+    public boolean isHide() {
+        return hide;
     }
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setHide(boolean hide) {
+        this.hide = hide;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
     public Role getRole() {
         return role;

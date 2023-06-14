@@ -21,16 +21,11 @@ public class NutritionalPlanServiceImplement implements INutritionalPlanService 
         return npR.findAll();
     }
     @Override
-    public void delete(int idNutritionalPlan){
-        npR.deleteById(idNutritionalPlan);
-    }
-    @Override
     public NutritionalPlan listId(int idNutritionalPlan){
         return npR.findById(idNutritionalPlan).orElse(new NutritionalPlan());
     }
     @Override
-    public void ocultarPlanNutricional(int id) {
-        npR.ocultarPlanNutricional(id);
+    public void hideNutritionalPlan(int id) {
+        npR.hideNutritionalPlan(id);
     }
-
 }

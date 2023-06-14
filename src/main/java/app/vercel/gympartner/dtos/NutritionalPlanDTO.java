@@ -4,86 +4,60 @@ import java.time.LocalDate;
 
 public class NutritionalPlanDTO {
     private int idNutritionalPlan;
-    private String titleNutritionalPlan;
-    private String statusNutritionalPlan;
-    private String objectiveNutritionalPlan;
-    private String descriptionNutritionalPlan;
-    private LocalDate startDateNutritionalPlan;
-    private LocalDate endDateNutritionalPlan;
-    private String recommendationsNutritionalPlan;
-
-    private boolean status;
+    private String objective;
+    private String description;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String recommendations;
+    private String status;
+    private boolean hide;
 
     public int getIdNutritionalPlan() {
         return idNutritionalPlan;
     }
-
     public void setIdNutritionalPlan(int idNutritionalPlan) {
         this.idNutritionalPlan = idNutritionalPlan;
     }
-
-    public String getTitleNutritionalPlan() {
-        return titleNutritionalPlan;
+    public String getObjective() {
+        return objective;
     }
-
-    public void setTitleNutritionalPlan(String titleNutritionalPlan) {
-        this.titleNutritionalPlan = titleNutritionalPlan;
+    public void setObjective(String objective) {
+        this.objective = objective;
     }
-
-    public String getStatusNutritionalPlan() {
-        return statusNutritionalPlan;
+    public String getDescription() {
+        return description;
     }
-
-    public void setStatusNutritionalPlan(String statusNutritionalPlan) {
-        this.statusNutritionalPlan = statusNutritionalPlan;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    public String getObjectiveNutritionalPlan() {
-        return objectiveNutritionalPlan;
+    public LocalDate getStartDate() {
+        return startDate;
     }
-
-    public void setObjectiveNutritionalPlan(String objectiveNutritionalPlan) {
-        this.objectiveNutritionalPlan = objectiveNutritionalPlan;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
-
-    public String getDescriptionNutritionalPlan() {
-        return descriptionNutritionalPlan;
+    public LocalDate getEndDate() {
+        return endDate;
     }
-
-    public void setDescriptionNutritionalPlan(String descriptionNutritionalPlan) {
-        this.descriptionNutritionalPlan = descriptionNutritionalPlan;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
-
-    public LocalDate getStartDateNutritionalPlan() {
-        return startDateNutritionalPlan;
+    public String getRecommendations() {
+        return recommendations;
     }
-
-    public void setStartDateNutritionalPlan(LocalDate startDateNutritionalPlan) {
-        this.startDateNutritionalPlan = startDateNutritionalPlan;
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
     }
-
-    public LocalDate getEndDateNutritionalPlan() {
-        return endDateNutritionalPlan;
-    }
-
-    public void setEndDateNutritionalPlan(LocalDate endDateNutritionalPlan) {
-        this.endDateNutritionalPlan = endDateNutritionalPlan;
-    }
-
-    public String getRecommendationsNutritionalPlan() {
-        return recommendationsNutritionalPlan;
-    }
-
-    public void setRecommendationsNutritionalPlan(String recommendationsNutritionalPlan) {
-        this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
-    }
-
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
-
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
-
+    public boolean isHide() {
+        return hide;
+    }
+    public void setHide(boolean hide) {
+        this.hide = hide;
+    }
 }

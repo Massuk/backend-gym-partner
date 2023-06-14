@@ -1,8 +1,10 @@
 package app.vercel.gympartner.dtos;
 
+import java.time.LocalDate;
+
 public class NutritionistDTO extends UserDTO{
     private double salary;
-    private int yearsWorking;
+    private LocalDate yearHired;
 
     public double getSalary() {
         return salary;
@@ -10,10 +12,10 @@ public class NutritionistDTO extends UserDTO{
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    public int getYearsWorking() {
-        return yearsWorking;
+    public LocalDate getYearHired() {
+        return yearHired;
     }
-    public void setYearsWorking(int yearsWorking) {
-        this.yearsWorking = yearsWorking;
+    public void setYearHired(LocalDate yearHired) {
+        this.yearHired = yearHired;
     }
 }

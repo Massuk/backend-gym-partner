@@ -13,6 +13,6 @@ import javax.transaction.Transactional;
 public interface INutritionistRepository extends JpaRepository<Nutritionist, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Nutritionist n SET n.status = false WHERE n.idUser =:id")
-    void disable(@Param("id") Integer id);
+    @Query("UPDATE Nutritionist n SET n.hide = true WHERE n.idUser =:id")
+    void hideNutritionist(@Param("id") Integer id);
 }

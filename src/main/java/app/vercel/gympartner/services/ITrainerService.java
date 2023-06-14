@@ -8,5 +8,5 @@ public interface ITrainerService {
     void insert(Trainer trainer);
     List<Trainer> list();
     Trainer listId(int id);
-    void disable(int id);
+    void hideTrainer(int id);
 }

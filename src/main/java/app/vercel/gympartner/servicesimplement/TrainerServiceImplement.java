@@ -26,7 +26,7 @@ public class TrainerServiceImplement implements ITrainerService {
         return tR.findById(id).orElse(new Trainer());
     }
     @Override
-    public void disable(int id) {
-        tR.disable(id);
+    public void hideTrainer(int id) {
+        tR.hideTrainer(id);
     }
 }

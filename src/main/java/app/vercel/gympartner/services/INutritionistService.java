@@ -8,5 +8,5 @@ public interface INutritionistService {
     void insert(Nutritionist nutritionist);
     List<Nutritionist> list();
     Nutritionist listId(int id);
-    void disable(int id);
+    void hideNutritionist(int id);
 }

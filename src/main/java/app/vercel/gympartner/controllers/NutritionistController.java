@@ -40,8 +40,8 @@ public class NutritionistController {
         Nutritionist t = m.map(dto, Nutritionist.class);
         nS.insert(t);
     }
-    @PutMapping("/{id}")
-    public void disable(@PathVariable("id") Integer id){
-        nS.disable(id);
+    @PutMapping("/hide/{id}")
+    public void hideNutritionistByID(@PathVariable("id") Integer id){
+        nS.hideNutritionist(id);
     }
 }

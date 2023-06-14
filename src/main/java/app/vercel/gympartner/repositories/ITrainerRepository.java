@@ -13,6 +13,6 @@ import javax.transaction.Transactional;
 public interface ITrainerRepository extends JpaRepository<Trainer, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Trainer t SET t.status = false WHERE t.idUser =:id")
-    void disable(@Param("id") Integer id);
+    @Query("UPDATE Trainer t SET t.hide = true WHERE t.idUser =:id")
+    void hideTrainer(@Param("id") Integer id);
 }

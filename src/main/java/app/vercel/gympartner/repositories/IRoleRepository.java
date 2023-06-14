@@ -13,6 +13,6 @@ import javax.transaction.Transactional;
 public interface IRoleRepository extends JpaRepository<Role, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Role r SET r.status = false WHERE r.idRole =:id")
-    void disable(@Param("id") Integer id);
+    @Query("UPDATE Role r SET r.hide = true WHERE r.idRole =:id")
+    void hideRole(@Param("id") Integer id);
 }
