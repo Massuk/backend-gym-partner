@@ -51,6 +51,6 @@ public class GymController {
     }
     @PutMapping("/{id}")
     public void hideGym(@PathVariable("id") Integer id){
-        gS.ocultarGym(id);
+        gS.hide(id);
     }
 }

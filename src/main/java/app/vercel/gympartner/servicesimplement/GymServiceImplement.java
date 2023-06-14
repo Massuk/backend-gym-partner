@@ -33,7 +33,7 @@ public class GymServiceImplement implements IGymService {
     }
 
     @Override
-    public void ocultarGym(int id) {
-        gR.ocultarGym(id);
+    public void hide(int id) {
+        gR.hideGym(id);
     }
 }
