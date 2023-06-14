@@ -18,20 +18,19 @@ public class Exercise {
     private int series;
     @Column(name = "kilograms", nullable = false)
     private int kilograms;
-    @Column(name = "hide")
-    private boolean hide;
+
+
     @ManyToOne
     @JoinColumn(name = "id_routine")
     private Routine routine;
     public Exercise(){}
 
-    public Exercise(int idExercise, String name, int repetitions, int series, int kilograms, boolean hide, Routine routine) {
+    public Exercise(int idExercise, String name, int repetitions, int series, int kilograms, Routine routine) {
         this.idExercise = idExercise;
         this.name = name;
         this.repetitions = repetitions;
         this.series = series;
         this.kilograms = kilograms;
-        this.hide = hide;
         this.routine = routine;
     }
 
@@ -55,10 +54,6 @@ public class Exercise {
         return kilograms;
     }
 
-    public boolean isHide() {
-        return hide;
-    }
-
     public void setIdExercise(int idExercise) {
         this.idExercise = idExercise;
     }
@@ -77,10 +72,6 @@ public class Exercise {
 
     public void setKilograms(int kilograms) {
         this.kilograms = kilograms;
-    }
-
-    public void setHide(boolean hide) {
-        this.hide = hide;
     }
 
     public Routine getRoutine() {

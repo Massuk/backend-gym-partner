@@ -9,7 +9,6 @@ public class ExerciseDTO {
     private int repetitions;
     private int series;
     private int kilograms;
-    private boolean hide;
     private Routine routine;
 
     public int getIdExercise() {
@@ -50,14 +49,6 @@ public class ExerciseDTO {
 
     public void setKilograms(int kilograms) {
         this.kilograms = kilograms;
-    }
-
-    public boolean isHide() {
-        return hide;
-    }
-
-    public void setHide(boolean hide) {
-        this.hide = hide;
     }
 
     public Routine getRoutine() {

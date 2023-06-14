@@ -9,5 +9,4 @@ public interface IExerciseService {
     List<Exercise>list();
     public void delete(int idExercise);
     public Exercise listid(int idExercise);
-    public void hide(int id);
 }

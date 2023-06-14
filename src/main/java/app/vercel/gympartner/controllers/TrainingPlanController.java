@@ -52,7 +52,7 @@ public class TrainingPlanController {
     }
 
     //HIDE TRAINING PLAN
-    @PutMapping("/{id}")
+    @PutMapping("/hide/{id}")
     public void hideTrainingPlanByID(@PathVariable("id") Integer idTplan){
         tpS.hideTrainingPlan(idTplan);
     }
