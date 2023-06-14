@@ -30,4 +30,9 @@ public class FoodServiceImplement implements IFoodService {
     @Override
     public Food listId(int idFood) { return fR.findById(idFood).orElse(new Food());
     }
+
+    @Override
+    public void ocultarAlimento(int id) {
+        fR.ocultarAlimento(id);
+    }
 }

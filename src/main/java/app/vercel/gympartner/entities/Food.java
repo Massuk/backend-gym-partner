@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Table(name = "foods")
 public class Food {
 
+    // --- ORM Setup --- //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFood;
@@ -18,7 +19,11 @@ public class Food {
     private int caloriesFood;
     @Column(name = "proteinsFood", length = 10, nullable = false)
     private int proteinsFood;
+    @Column(name = "status", nullable = false)
+    private boolean status;
 
+
+    // --- Constructors --- //
     public Food() {
 
     }
@@ -29,8 +34,10 @@ public class Food {
         this.portionsFood = portionsFood;
         this.caloriesFood = caloriesFood;
         this.proteinsFood = proteinsFood;
+        this.status = true;
     }
 
+    // --- Getters and Setters ---//
     public int getIdFood() {
         return idFood;
     }
@@ -69,4 +76,8 @@ public class Food {
     public void setProteinsFood(int proteinsFood) {
         this.proteinsFood = proteinsFood;
     }
+
+    public boolean isStatus() { return status; }
+
+    public void setStatus(boolean status) { this.status = status; }
 }

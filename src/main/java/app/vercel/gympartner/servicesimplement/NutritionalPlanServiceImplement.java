@@ -28,4 +28,9 @@ public class NutritionalPlanServiceImplement implements INutritionalPlanService 
     public NutritionalPlan listId(int idNutritionalPlan){
         return npR.findById(idNutritionalPlan).orElse(new NutritionalPlan());
     }
+    @Override
+    public void ocultarPlanNutricional(int id) {
+        npR.ocultarPlanNutricional(id);
+    }
+
 }

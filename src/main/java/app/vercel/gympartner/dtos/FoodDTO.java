@@ -8,6 +8,10 @@ public class FoodDTO {
     private int portionsFood;
     private int caloriesFood;
     private int proteinsFood;
+    private boolean status;
+
+
+    // --- Getters and Setters ---//
 
     public int getIdFood() {
         return idFood;
@@ -45,5 +49,13 @@ public class FoodDTO {
 
     public void setProteinsFood(int proteinsFood) {
         this.proteinsFood = proteinsFood;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
