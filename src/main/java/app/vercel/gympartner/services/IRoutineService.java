@@ -9,5 +9,5 @@ public interface IRoutineService {
     public void insert(Routine routine);
     List<Routine> list();
     public void delete(int idTplan);
-    void ocultarEjercicio(int id);
+    void hide(int id);
 }

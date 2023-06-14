@@ -6,11 +6,11 @@ import javax.persistence.Column;
 
 public class GymDTO {
     private int idGym;
-    private String nameGym;
-    private String codeGym;
-    private String rucGym;
-    private String rsGym;
-    private boolean statusGym;
+    private String name;
+    private String code;
+    private String ruc;
+    private String rs;
+    private boolean hide;
     private Membership membership;
 
     public int getIdGym() {
@@ -21,44 +21,44 @@ public class GymDTO {
         this.idGym = idGym;
     }
 
-    public String getNameGym() {
-        return nameGym;
+    public String getName() {
+        return name;
     }
 
-    public void setNameGym(String nameGym) {
-        this.nameGym = nameGym;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCodeGym() {
-        return codeGym;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodeGym(String codeGym) {
-        this.codeGym = codeGym;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getRucGym() {
-        return rucGym;
+    public String getRuc() {
+        return ruc;
     }
 
-    public void setRucGym(String rucGym) {
-        this.rucGym = rucGym;
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
     }
 
-    public String getRsGym() {
-        return rsGym;
+    public String getRs() {
+        return rs;
     }
 
-    public void setRsGym(String rsGym) {
-        this.rsGym = rsGym;
+    public void setRs(String rs) {
+        this.rs = rs;
     }
 
-    public boolean isStatusGym() {
-        return statusGym;
+    public boolean isHide() {
+        return hide;
     }
 
-    public void setStatusGym(boolean statusGym) {
-        this.statusGym = statusGym;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 
     public Membership getMembership() {

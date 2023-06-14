@@ -38,7 +38,7 @@ public class TrainigPlanServiceImplement implements ITrainingPlanService {
     }
 
     @Override
-    public void ocultarPlanEntrenamiento(int id) {
-        tpR.ocultarPlanEntrenamiento(id);
+    public void hideTrainingPlan(int id) {
+        tpR.hideTPlan(id);
     }
 }

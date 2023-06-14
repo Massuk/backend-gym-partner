@@ -10,33 +10,36 @@ public class NutritionalPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idNutritionalPlan;
-    @Column (name = "titleNutritionalPlan", length = 60, nullable = false)
-    private String titleNutritionalPlan;
-    @Column (name = "statusNutritionalPlan", length = 10, nullable = false)
-    private String statusNutritionalPlan;
-    @Column (name = "objectiveNutritionalPlan", length = 30, nullable = false)
-    private String objectiveNutritionalPlan;
-    @Column (name = "descriptionNutritionalPlan", length = 280, nullable = false)
-    private String descriptionNutritionalPlan;
-    @Column (name = "startDateNutritionalPlan", nullable = false)
-    private LocalDate startDateNutritionalPlan;
-    @Column (name = "endDateNutritionalPlan", nullable = false)
+    @Column (name = "title", length = 50, nullable = false)
+    private String title;
+    @Column (name = "objective", length = 50, nullable = false)
+    private String objective;
+    @Column (name = "description", length = 250, nullable = false)
+    private String description;
+    @Column (name = "startDate", nullable = false)
+    private LocalDate startDate;
+    @Column (name = "endDate", nullable = false)
     private LocalDate endDateNutritionalPlan;
-    @Column (name = "recommendationsNutritionalPlan", length = 280, nullable = false)
-    private String recommendationsNutritionalPlan;
+    @Column (name = "recommendations", length = 250, nullable = false)
+    private String recommendations;
+    @Column (name = "status", length = 30, nullable = false)
+    private String status;
+    @Column (name = "hide", nullable = false)
+    private boolean hide;
 
     public NutritionalPlan() {
     }
 
-    public NutritionalPlan(int idNutritionalPlan, String titleNutritionalPlan, String statusNutritionalPlan, String objectiveNutritionalPlan, String descriptionNutritionalPlan, LocalDate startDateNutritionalPlan, LocalDate endDateNutritionalPlan, String recommendationsNutritionalPlan) {
+    public NutritionalPlan(int idNutritionalPlan, String title, String objective, String description, LocalDate startDate, LocalDate endDateNutritionalPlan, String recommendations, String status, boolean hide) {
         this.idNutritionalPlan = idNutritionalPlan;
-        this.titleNutritionalPlan = titleNutritionalPlan;
-        this.statusNutritionalPlan = statusNutritionalPlan;
-        this.objectiveNutritionalPlan = objectiveNutritionalPlan;
-        this.descriptionNutritionalPlan = descriptionNutritionalPlan;
-        this.startDateNutritionalPlan = startDateNutritionalPlan;
+        this.title = title;
+        this.objective = objective;
+        this.description = description;
+        this.startDate = startDate;
         this.endDateNutritionalPlan = endDateNutritionalPlan;
-        this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
+        this.recommendations = recommendations;
+        this.status = status;
+        this.hide = hide;
     }
 
     public int getIdNutritionalPlan() {
@@ -47,44 +50,36 @@ public class NutritionalPlan {
         this.idNutritionalPlan = idNutritionalPlan;
     }
 
-    public String getTitleNutritionalPlan() {
-        return titleNutritionalPlan;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitleNutritionalPlan(String titleNutritionalPlan) {
-        this.titleNutritionalPlan = titleNutritionalPlan;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getStatusNutritionalPlan() {
-        return statusNutritionalPlan;
+    public String getObjective() {
+        return objective;
     }
 
-    public void setStatusNutritionalPlan(String statusNutritionalPlan) {
-        this.statusNutritionalPlan = statusNutritionalPlan;
+    public void setObjective(String objective) {
+        this.objective = objective;
     }
 
-    public String getObjectiveNutritionalPlan() {
-        return objectiveNutritionalPlan;
+    public String getDescription() {
+        return description;
     }
 
-    public void setObjectiveNutritionalPlan(String objectiveNutritionalPlan) {
-        this.objectiveNutritionalPlan = objectiveNutritionalPlan;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getDescriptionNutritionalPlan() {
-        return descriptionNutritionalPlan;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setDescriptionNutritionalPlan(String descriptionNutritionalPlan) {
-        this.descriptionNutritionalPlan = descriptionNutritionalPlan;
-    }
-
-    public LocalDate getStartDateNutritionalPlan() {
-        return startDateNutritionalPlan;
-    }
-
-    public void setStartDateNutritionalPlan(LocalDate startDateNutritionalPlan) {
-        this.startDateNutritionalPlan = startDateNutritionalPlan;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
     public LocalDate getEndDateNutritionalPlan() {
@@ -95,11 +90,27 @@ public class NutritionalPlan {
         this.endDateNutritionalPlan = endDateNutritionalPlan;
     }
 
-    public String getRecommendationsNutritionalPlan() {
-        return recommendationsNutritionalPlan;
+    public String getRecommendations() {
+        return recommendations;
     }
 
-    public void setRecommendationsNutritionalPlan(String recommendationsNutritionalPlan) {
-        this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isHide() {
+        return hide;
+    }
+
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 }

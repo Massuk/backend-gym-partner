@@ -53,7 +53,7 @@ public class ExerciseController {
         eS.insert(e);
     }
     @PutMapping("/{id}")
-    public void hideExercise(@PathVariable("id") Integer idExercise){
-        eS.hideExercise(idExercise);
+    public void hideExerciseByID(@PathVariable("id") Integer idExercise){
+        eS.hide(idExercise);
     }
 }

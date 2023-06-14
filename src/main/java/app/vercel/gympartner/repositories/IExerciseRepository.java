@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface IExerciseRepository extends JpaRepository<Exercise,Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Exercise e SET e.status = false WHERE e.idExercise =:id")
-    void ocultarEjercicio(@Param("id") Integer id);
+    @Query("UPDATE Exercise e SET e.hide = true WHERE e.idExercise =:id")
+    void hideExercise(@Param("id") Integer id);
 }

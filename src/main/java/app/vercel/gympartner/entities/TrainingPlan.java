@@ -12,19 +12,19 @@ public class TrainingPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTrainingPlan;
-    @Column(name = "title", length = 30, nullable = false)
+    @Column(name = "title", length = 50, nullable = false)
     private String title;
-    @Column(name = "description", length = 150, nullable = false)
+    @Column(name = "description", length = 250, nullable = false)
     private String description;
-    @Column(name = "objective", length = 30, nullable = false)
+    @Column(name = "objective", length = 50, nullable = false)
     private String objective;
-    @Column(name = "level", length = 30, nullable = false)
+    @Column(name = "level", length = 50, nullable = false)
     private String level;
     @Column(name = "startDate", nullable = false)
     private LocalDate startDate;
     @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", length = 30, nullable = false)
     private String status;
     @Column(name = "hide", nullable = false)
     private boolean hide;

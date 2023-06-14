@@ -5,59 +5,59 @@ import app.vercel.gympartner.entities.Routine;
 public class ExerciseDTO {
 
     private int idExercise;
-    private String nameExercise;
-    private int repetitionsExercise;
-    private int seriesExercise;
-    private int kilogramsExercise;
-    private boolean status;
+    private String name;
+    private int repetitions;
+    private int series;
+    private int kilograms;
+    private boolean hide;
     private Routine routine;
 
     public int getIdExercise() {
         return idExercise;
     }
 
-    public String getNameExercise() {
-        return nameExercise;
-    }
-
-    public int getRepetitionsExercise() {
-        return repetitionsExercise;
-    }
-
-    public int getSeriesExercise() {
-        return seriesExercise;
-    }
-
-    public int getKilogramsExercise() {
-        return kilogramsExercise;
-    }
-
     public void setIdExercise(int idExercise) {
         this.idExercise = idExercise;
     }
 
-    public void setNameExercise(String nameExercise) {
-        this.nameExercise = nameExercise;
+    public String getName() {
+        return name;
     }
 
-    public void setRepetitionsExercise(int repetitionsExercise) {
-        this.repetitionsExercise = repetitionsExercise;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setSeriesExercise(int seriesExercise) {
-        this.seriesExercise = seriesExercise;
+    public int getRepetitions() {
+        return repetitions;
     }
 
-    public void setKilogramsExercise(int kilogramsExercise) {
-        this.kilogramsExercise = kilogramsExercise;
+    public void setRepetitions(int repetitions) {
+        this.repetitions = repetitions;
     }
 
-    public boolean isStatus() {
-        return status;
+    public int getSeries() {
+        return series;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setSeries(int series) {
+        this.series = series;
+    }
+
+    public int getKilograms() {
+        return kilograms;
+    }
+
+    public void setKilograms(int kilograms) {
+        this.kilograms = kilograms;
+    }
+
+    public boolean isHide() {
+        return hide;
+    }
+
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 
     public Routine getRoutine() {
