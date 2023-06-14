@@ -51,10 +51,16 @@ public class TrainingPlanController {
         TrainingPlan tp = m.map(dto, TrainingPlan.class);
         tpS.insert(tp);
     }
+    //HIDE TRAINING PLAN
+    @PutMapping("/{id}")
+    public void hideTrainingPlan(@PathVariable("id") Integer idTplan){
+        tpS.ocultarPlanEntrenamiento(idTplan);
+    }
 
-    // Delete Training Plan by ID
+    /* Delete Training Plan by ID
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         tpS.delete(id);
     }
+    */
 }
