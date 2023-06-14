@@ -25,14 +25,16 @@ public class TrainingPlan {
     @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
     @Column(name = "status", nullable = false)
-    private boolean status;
+    private String status;
+    @Column(name = "hide", nullable = false)
+    private boolean hide;
 
 
     // --- Constructors --- //
     public TrainingPlan() {
     }
 
-    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate) {
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, String status, boolean hide) {
         this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
@@ -40,10 +42,13 @@ public class TrainingPlan {
         this.level = level;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.status = true;
+        this.status = status;
+        this.hide = hide;
     }
 
     // --- Getters and Setters ---//
+
+
     public int getIdTrainingPlan() {
         return idTrainingPlan;
     }
@@ -55,45 +60,64 @@ public class TrainingPlan {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getObjective() {
         return objective;
     }
+
     public void setObjective(String objective) {
         this.objective = objective;
     }
+
     public String getLevel() {
         return level;
     }
+
     public void setLevel(String level) {
         this.level = level;
     }
+
     public LocalDate getStartDate() {
         return startDate;
     }
+
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
+
     public LocalDate getEndDate() {
         return endDate;
     }
+
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
+    }
+
+    public boolean isHide() {
+        return hide;
+    }
+
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 }
