@@ -1,7 +1,5 @@
 package app.vercel.gympartner.entities;
 
-import net.bytebuddy.asm.Advice;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
@@ -19,7 +17,7 @@ public class NutritionalPlan {
     @Column (name = "startDate", nullable = false)
     private LocalDate startDate;
     @Column (name = "endDate", nullable = false)
-    private LocalDate endDateNutritionalPlan;
+    private LocalDate endDate;
     @Column (name = "recommendations", length = 250, nullable = false)
     private String recommendations;
     @Column (name = "status", length = 30, nullable = false)
@@ -27,16 +25,17 @@ public class NutritionalPlan {
     @Column (name = "hide", nullable = false)
     private boolean hide;
 
+
     public NutritionalPlan() {
     }
 
-    public NutritionalPlan(int idNutritionalPlan, String title, String objective, String description, LocalDate startDate, LocalDate endDateNutritionalPlan, String recommendations, String status, boolean hide) {
+    public NutritionalPlan(int idNutritionalPlan, String title, String objective, String description, LocalDate startDate, LocalDate endDate, String recommendations, String status, boolean hide) {
         this.idNutritionalPlan = idNutritionalPlan;
         this.title = title;
         this.objective = objective;
         this.description = description;
         this.startDate = startDate;
-        this.endDateNutritionalPlan = endDateNutritionalPlan;
+        this.endDate = endDate;
         this.recommendations = recommendations;
         this.status = status;
         this.hide = hide;
@@ -82,12 +81,12 @@ public class NutritionalPlan {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDateNutritionalPlan() {
-        return endDateNutritionalPlan;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setEndDateNutritionalPlan(LocalDate endDateNutritionalPlan) {
-        this.endDateNutritionalPlan = endDateNutritionalPlan;
+    public void setEndDate(LocalDate endDateNutritionalPlan) {
+        this.endDate = endDateNutritionalPlan;
     }
 
     public String getRecommendations() {
@@ -113,4 +112,6 @@ public class NutritionalPlan {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
+
+
 }

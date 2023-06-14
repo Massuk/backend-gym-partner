@@ -13,6 +13,7 @@ public class NutritionalPlanDTO {
     private String status;
     private boolean hide;
 
+
     public int getIdNutritionalPlan() {
         return idNutritionalPlan;
     }
@@ -84,4 +85,7 @@ public class NutritionalPlanDTO {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
+
+
+
 }

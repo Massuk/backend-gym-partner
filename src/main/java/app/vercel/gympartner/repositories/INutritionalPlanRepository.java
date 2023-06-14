@@ -15,4 +15,5 @@ public interface INutritionalPlanRepository extends JpaRepository<NutritionalPla
     @Modifying
     @Query("UPDATE NutritionalPlan np SET np.hide = true WHERE np.idNutritionalPlan =:id")
     void hideNPlan(@Param("id") Integer id);
+
 }
