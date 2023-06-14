@@ -13,5 +13,5 @@ public interface ITrainigPlanRepository extends JpaRepository<TrainingPlan, Inte
     @Transactional
     @Modifying
     @Query("UPDATE TrainingPlan tp SET tp.hide = true WHERE tp.idTrainingPlan =:id")
-    void hideTPlan(@Param("id") Integer id);
+    void hideTrainingPlan(@Param("id") Integer id);
 }

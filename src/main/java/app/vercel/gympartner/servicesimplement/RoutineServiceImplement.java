@@ -27,7 +27,7 @@ public class RoutineServiceImplement implements IRoutineService {
     }
 
     @Override
-    public void hide(int id) {
+    public void hideExercise(int id) {
         rR.hideExercise(id);
     }
 }
