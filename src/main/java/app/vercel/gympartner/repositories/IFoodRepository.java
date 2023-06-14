@@ -10,8 +10,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface IFoodRepository extends JpaRepository<Food, Integer> {
-    @Transactional
-    @Modifying
-    @Query("UPDATE Food f SET f.status = false WHERE f.idFood =:id")
-    void ocultarAlimento(@Param("id") Integer id);
+
 }

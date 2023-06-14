@@ -11,8 +11,8 @@ public class MealDTO {
     private int idMeal;
     private String title;
     private String day;
-    private Time hour;
-    private boolean status;
+    private String type;
+    private boolean hide;
     private NutritionalPlan nutritionalPlan;
 
     public int getIdMeal() {
@@ -39,20 +39,20 @@ public class MealDTO {
         this.day = day;
     }
 
-    public Time getHour() {
-        return hour;
+    public String getType() {
+        return type;
     }
 
-    public void setHour(Time hour) {
-        this.hour = hour;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isHide() {
+        return hide;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 
     public NutritionalPlan getNutritionalPlan() {

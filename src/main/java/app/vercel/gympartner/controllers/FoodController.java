@@ -49,17 +49,11 @@ public class FoodController {
         fS.create(f);
     }
 
-    //HIDE Food
-    @PutMapping("/{id}")
-    public void hideFood(@PathVariable("id") Integer idFood){
-        fS.ocultarAlimento(idFood);
-    }
-
-    /* Delete Food by ID
+    //Delete Food by ID
     @DeleteMapping("/{id}")
     public void delete (@PathVariable("id") Integer id){
         fS.delete(id);
     }
-     */
+
 
 }

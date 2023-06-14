@@ -13,5 +13,5 @@ public interface IFoodService {
 
     public Food listId(int idFood);
     
-    void ocultarAlimento(int id);
+
 }

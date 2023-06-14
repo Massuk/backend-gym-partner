@@ -13,20 +13,20 @@ public class Meal {
     private String title;
     @Column(name="day", length = 20, nullable = false)
     private String day;
-    @Column(name="hour", nullable = false)
-    private Time hour;
-    @Column(name = "status", nullable = false)
-    private boolean status;
+    @Column(name="type", length = 20, nullable = false)
+    private String type;
+    @Column(name = "hide", nullable = false)
+    private boolean hide;
     @ManyToOne
-    @JoinColumn(name = "id_nutritionalPlan")
+    @JoinColumn(name = "id_nutritional_plan")
     private NutritionalPlan nutritionalPlan;
 
-    public Meal(int idMeal, String title, String day, Time hour, boolean status, NutritionalPlan nutritionalPlan) {
+    public Meal(int idMeal, String title, String day, String type, boolean hide, NutritionalPlan nutritionalPlan) {
         this.idMeal = idMeal;
         this.title = title;
         this.day = day;
-        this.hour = hour;
-        this.status = status;
+        this.type = type;
+        this.hide = hide;
         this.nutritionalPlan = nutritionalPlan;
     }
 
@@ -58,20 +58,20 @@ public class Meal {
         this.day = day;
     }
 
-    public Time getHour() {
-        return hour;
+    public String getType() {
+        return type;
     }
 
-    public void setHour(Time hour) {
-        this.hour = hour;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isHide() {
+        return hide;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 
     public NutritionalPlan getNutritionalPlan() {
