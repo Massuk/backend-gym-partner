@@ -12,6 +12,8 @@ public class NutritionalPlanDTO {
     private LocalDate endDateNutritionalPlan;
     private String recommendationsNutritionalPlan;
 
+    private boolean status;
+
     public int getIdNutritionalPlan() {
         return idNutritionalPlan;
     }
@@ -75,4 +77,13 @@ public class NutritionalPlanDTO {
     public void setRecommendationsNutritionalPlan(String recommendationsNutritionalPlan) {
         this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
 }

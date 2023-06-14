@@ -1,13 +1,17 @@
 package app.vercel.gympartner.dtos;
 
+import app.vercel.gympartner.entities.Membership;
+
 import javax.persistence.Column;
 
 public class GymDTO {
     private int idGym;
     private String nameGym;
     private String codeGym;
-    private int rucGym;
+    private String rucGym;
     private String rsGym;
+    private boolean statusGym;
+    private Membership membership;
 
     public int getIdGym() {
         return idGym;
@@ -33,11 +37,11 @@ public class GymDTO {
         this.codeGym = codeGym;
     }
 
-    public int getRucGym() {
+    public String getRucGym() {
         return rucGym;
     }
 
-    public void setRucGym(int rucGym) {
+    public void setRucGym(String rucGym) {
         this.rucGym = rucGym;
     }
 
@@ -47,5 +51,21 @@ public class GymDTO {
 
     public void setRsGym(String rsGym) {
         this.rsGym = rsGym;
+    }
+
+    public boolean isStatusGym() {
+        return statusGym;
+    }
+
+    public void setStatusGym(boolean statusGym) {
+        this.statusGym = statusGym;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
     }
 }

@@ -12,23 +12,30 @@ public class Gym {
     private int idGym;
     @Column(name = "nameGym", length = 30, nullable = false)
     private String nameGym;
-    @Column(name = "codeGym", length = 5, nullable = false)
+    @Column(name = "codeGym", length = 10, nullable = false)
     private String codeGym;
     @Column(name = "rucGym", length = 11, nullable = false)
-    private int rucGym;
+    private String rucGym;
     @Column(name = "rsGym", length = 30, nullable = false)
     private String rsGym;
+    @Column(name = "statusGym", nullable = false)
+    private boolean statusGym;
+    @ManyToOne
+    @JoinColumn(name = "membership_id")
+    private Membership membership;
 
     public Gym() {
 
     }
 
-    public Gym(int idGym, String nameGym, String codeGym, int rucGym, String rsGym) {
+    public Gym(int idGym, String nameGym, String codeGym, String rucGym, String rsGym, Membership membership) {
         this.idGym = idGym;
         this.nameGym = nameGym;
         this.codeGym = codeGym;
         this.rucGym = rucGym;
         this.rsGym = rsGym;
+        this.statusGym = true;
+        this.membership = membership;
     }
 
     public int getIdGym() {
@@ -55,11 +62,11 @@ public class Gym {
         this.codeGym = codeGym;
     }
 
-    public int getRucGym() {
+    public String getRucGym() {
         return rucGym;
     }
 
-    public void setRucGym(int rucGym) {
+    public void setRucGym(String rucGym) {
         this.rucGym = rucGym;
     }
 
@@ -69,5 +76,21 @@ public class Gym {
 
     public void setRsGym(String rsGym) {
         this.rsGym = rsGym;
+    }
+
+    public boolean isStatusGym() {
+        return statusGym;
+    }
+
+    public void setStatusGym(boolean statusGym) {
+        this.statusGym = statusGym;
+    }
+
+    public Membership getMembership() {
+        return membership;
+    }
+
+    public void setMembership(Membership membership) {
+        this.membership = membership;
     }
 }
