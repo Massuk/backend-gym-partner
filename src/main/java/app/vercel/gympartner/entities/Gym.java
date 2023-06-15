@@ -1,95 +1,88 @@
 package app.vercel.gympartner.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "gyms")
 public class Gym {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGym;
-    @Column(name = "nameGym", length = 30, nullable = false)
-    private String nameGym;
-    @Column(name = "codeGym", length = 10, nullable = false)
-    private String codeGym;
-    @Column(name = "rucGym", length = 11, nullable = false)
-    private String rucGym;
-    @Column(name = "rsGym", length = 30, nullable = false)
-    private String rsGym;
-    @Column(name = "statusGym", nullable = false)
-    private boolean statusGym;
+    @Column(name = "name", length = 50, nullable = false)
+    private String name;
+    @Column(name = "code", length = 10, nullable = false)
+    private String code;
+    @Column(name = "ruc", length = 11, nullable = false)
+    private String ruc;
+    @Column(name = "reason", length = 30, nullable = false)
+    private String reason;
+    @Column(name = "hide", nullable = false)
+    private boolean hide;
     @ManyToOne
-    @JoinColumn(name = "membership_id")
+    @JoinColumn(name = "idOwner")
+    private Owner owner;
+    @ManyToOne
+    @JoinColumn(name = "idMembership")
     private Membership membership;
 
     public Gym() {
-
     }
-
-    public Gym(int idGym, String nameGym, String codeGym, String rucGym, String rsGym, Membership membership) {
+    public Gym(int idGym, String name, String code, String ruc, String reason, boolean hide, Owner owner, Membership membership) {
         this.idGym = idGym;
-        this.nameGym = nameGym;
-        this.codeGym = codeGym;
-        this.rucGym = rucGym;
-        this.rsGym = rsGym;
-        this.statusGym = true;
+        this.name = name;
+        this.code = code;
+        this.ruc = ruc;
+        this.reason = reason;
+        this.hide = hide;
+        this.owner = owner;
         this.membership = membership;
     }
 
     public int getIdGym() {
         return idGym;
     }
-
     public void setIdGym(int idGym) {
         this.idGym = idGym;
     }
-
-    public String getNameGym() {
-        return nameGym;
+    public String getName() {
+        return name;
     }
-
-    public void setNameGym(String nameGym) {
-        this.nameGym = nameGym;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getCodeGym() {
-        return codeGym;
+    public String getCode() {
+        return code;
     }
-
-    public void setCodeGym(String codeGym) {
-        this.codeGym = codeGym;
+    public void setCode(String code) {
+        this.code = code;
     }
-
-    public String getRucGym() {
-        return rucGym;
+    public String getRuc() {
+        return ruc;
     }
-
-    public void setRucGym(String rucGym) {
-        this.rucGym = rucGym;
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
     }
-
-    public String getRsGym() {
-        return rsGym;
+    public String getReason() {
+        return reason;
     }
-
-    public void setRsGym(String rsGym) {
-        this.rsGym = rsGym;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
-
-    public boolean isStatusGym() {
-        return statusGym;
+    public boolean isHide() {
+        return hide;
     }
-
-    public void setStatusGym(boolean statusGym) {
-        this.statusGym = statusGym;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
-
+    public Owner getOwner() {
+        return owner;
+    }
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
     public Membership getMembership() {
         return membership;
     }
-
     public void setMembership(Membership membership) {
         this.membership = membership;
     }

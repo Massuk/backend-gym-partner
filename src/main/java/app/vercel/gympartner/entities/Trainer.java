@@ -1,9 +1,6 @@
 package app.vercel.gympartner.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -14,13 +11,17 @@ public class Trainer extends User{
     private double salary;
     @Column(name = "yearHired", nullable = false)
     private LocalDate yearHired;
+    @ManyToOne
+    @JoinColumn(name = "idGym")
+    private Gym gym;
 
     public Trainer() {
     }
-    public Trainer(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, double salary, LocalDate yearHired) {
+    public Trainer(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, double salary, LocalDate yearHired, Gym gym) {
         super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, hide, password, role);
         this.salary = salary;
         this.yearHired = yearHired;
+        this.gym = gym;
     }
 
     public double getSalary() {
@@ -34,5 +35,11 @@ public class Trainer extends User{
     }
     public void setYearHired(LocalDate yearHired) {
         this.yearHired = yearHired;
+    }
+    public Gym getGym() {
+        return gym;
+    }
+    public void setGym(Gym gym) {
+        this.gym = gym;
     }
 }

@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface IGymRepository extends JpaRepository<Gym, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Gym g SET g.statusGym = false WHERE g.idGym =:id")
-    void ocultarGym(@Param("id") Integer id);
+    @Query("UPDATE Gym g SET g.hide = true WHERE g.idGym =:id")
+    void hideGym(@Param("id") Integer id);
 }

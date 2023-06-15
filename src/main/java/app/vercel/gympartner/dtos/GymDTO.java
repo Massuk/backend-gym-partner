@@ -1,70 +1,68 @@
 package app.vercel.gympartner.dtos;
 
 import app.vercel.gympartner.entities.Membership;
+import app.vercel.gympartner.entities.Owner;
 
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 public class GymDTO {
     private int idGym;
-    private String nameGym;
-    private String codeGym;
-    private String rucGym;
-    private String rsGym;
-    private boolean statusGym;
+    private String name;
+    private String code;
+    private String ruc;
+    private String reason;
+    private boolean hide;
+    private Owner owner;
     private Membership membership;
 
     public int getIdGym() {
         return idGym;
     }
-
     public void setIdGym(int idGym) {
         this.idGym = idGym;
     }
-
-    public String getNameGym() {
-        return nameGym;
+    public String getName() {
+        return name;
     }
-
-    public void setNameGym(String nameGym) {
-        this.nameGym = nameGym;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public String getCodeGym() {
-        return codeGym;
+    public String getCode() {
+        return code;
     }
-
-    public void setCodeGym(String codeGym) {
-        this.codeGym = codeGym;
+    public void setCode(String code) {
+        this.code = code;
     }
-
-    public String getRucGym() {
-        return rucGym;
+    public String getRuc() {
+        return ruc;
     }
-
-    public void setRucGym(String rucGym) {
-        this.rucGym = rucGym;
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
     }
-
-    public String getRsGym() {
-        return rsGym;
+    public String getReason() {
+        return reason;
     }
-
-    public void setRsGym(String rsGym) {
-        this.rsGym = rsGym;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
-
-    public boolean isStatusGym() {
-        return statusGym;
+    public boolean isHide() {
+        return hide;
     }
-
-    public void setStatusGym(boolean statusGym) {
-        this.statusGym = statusGym;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
-
+    public Owner getOwner() {
+        return owner;
+    }
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
     public Membership getMembership() {
         return membership;
     }
-
     public void setMembership(Membership membership) {
         this.membership = membership;
     }
