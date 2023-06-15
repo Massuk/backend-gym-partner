@@ -1,12 +1,10 @@
 package app.vercel.gympartner.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "gyms")
 public class Gym {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGym;
@@ -21,21 +19,20 @@ public class Gym {
     @Column(name = "hide", nullable = false)
     private boolean hide;
     @ManyToOne
-    @JoinColumn(name = "id_membership")
-    private Membership membership;
+    @JoinColumn(name = "idOwner")
+    private Owner owner;
 
     public Gym() {
-
     }
 
-    public Gym(int idGym, String name, String code, String ruc, String rs, boolean hide, Membership membership) {
+    public Gym(int idGym, String name, String code, String ruc, String rs, boolean hide, Owner owner) {
         this.idGym = idGym;
         this.name = name;
         this.code = code;
         this.ruc = ruc;
         this.rs = rs;
         this.hide = hide;
-        this.membership = membership;
+        this.owner = owner;
     }
 
     public int getIdGym() {
@@ -86,11 +83,11 @@ public class Gym {
         this.hide = hide;
     }
 
-    public Membership getMembership() {
-        return membership;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public void setMembership(Membership membership) {
-        this.membership = membership;
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

@@ -13,7 +13,6 @@ public class NutritionalPlanDTO {
     private String status;
     private boolean hide;
 
-
     public int getIdNutritionalPlan() {
         return idNutritionalPlan;
     }
@@ -28,14 +27,6 @@ public class NutritionalPlanDTO {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getObjective() {
@@ -78,6 +69,14 @@ public class NutritionalPlanDTO {
         this.recommendations = recommendations;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public boolean isHide() {
         return hide;
     }
@@ -85,7 +84,4 @@ public class NutritionalPlanDTO {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
-
-
-
 }

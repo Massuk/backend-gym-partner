@@ -9,7 +9,6 @@ public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idExercise;
-
     @Column(name = "name", length = 50, nullable = false)
     private String name;
     @Column(name = "repetitions", nullable = false)
@@ -18,7 +17,6 @@ public class Exercise {
     private int series;
     @Column(name = "kilograms", nullable = false)
     private int kilograms;
-
 
     @ManyToOne
     @JoinColumn(name = "id_routine")

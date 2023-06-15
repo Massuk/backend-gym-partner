@@ -5,12 +5,8 @@ import app.vercel.gympartner.entities.Gym;
 import java.util.List;
 
 public interface IGymService {
-    public void create(Gym gym);
-
+    void insert(Gym gym);
     List<Gym> list();
-
-    public void delete(int idGym);
-
-    public Gym listId(int idGym);
-    void hide(int id);
+    Gym listId(int idGym);
+    void hideGym(int id);
 }

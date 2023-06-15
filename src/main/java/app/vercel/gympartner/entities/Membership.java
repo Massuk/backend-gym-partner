@@ -8,74 +8,71 @@ public class Membership {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idMembership;
-    @Column(name = "name", length = 30, nullable = false)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
-    @Column(name = "trainerCapacity", nullable = false)
-    private int trainerCapacity;
-    @Column(name = "nutriCapacity", nullable = false)
-    private int nutriCapacity;
+    @Column(name = "trainersCapacity", nullable = false)
+    private int trainersCapacity;
+    @Column(name = "nutritionistsCapacity", nullable = false)
+    private int nutritionistsCapacity;
     @Column(name = "clientsCapacity", nullable = false)
     private int clientsCapacity;
     @Column(name = "price", nullable = false)
     private float price;
+    @Column(name = "hide", nullable = false)
+    private boolean hide;
 
     public Membership() {
     }
-
-    public Membership(int idMembership, String name, int trainerCapacity, int nutriCapacity, int clientsCapacity, float price) {
+    public Membership(int idMembership, String name, int trainersCapacity, int nutritionistsCapacity, int clientsCapacity, float price, boolean hide) {
         this.idMembership = idMembership;
         this.name = name;
-        this.trainerCapacity = trainerCapacity;
-        this.nutriCapacity = nutriCapacity;
+        this.trainersCapacity = trainersCapacity;
+        this.nutritionistsCapacity = nutritionistsCapacity;
         this.clientsCapacity = clientsCapacity;
         this.price = price;
+        this.hide = hide;
     }
 
     public int getIdMembership() {
         return idMembership;
     }
-
     public void setIdMembership(int idMembership) {
         this.idMembership = idMembership;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getTrainerCapacity() {
-        return trainerCapacity;
+    public int getTrainersCapacity() {
+        return trainersCapacity;
     }
-
-    public void setTrainerCapacity(int trainerCapacity) {
-        this.trainerCapacity = trainerCapacity;
+    public void setTrainersCapacity(int trainersCapacity) {
+        this.trainersCapacity = trainersCapacity;
     }
-
-    public int getNutriCapacity() {
-        return nutriCapacity;
+    public int getNutritionistsCapacity() {
+        return nutritionistsCapacity;
     }
-
-    public void setNutriCapacity(int nutriCapacity) {
-        this.nutriCapacity = nutriCapacity;
+    public void setNutritionistsCapacity(int nutritionistsCapacity) {
+        this.nutritionistsCapacity = nutritionistsCapacity;
     }
-
     public int getClientsCapacity() {
         return clientsCapacity;
     }
-
     public void setClientsCapacity(int clientsCapacity) {
         this.clientsCapacity = clientsCapacity;
     }
-
     public float getPrice() {
         return price;
     }
-
     public void setPrice(float price) {
         this.price = price;
+    }
+    public boolean isHide() {
+        return hide;
+    }
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 }

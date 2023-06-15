@@ -85,8 +85,8 @@ public class NutritionalPlan {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDateNutritionalPlan) {
-        this.endDate = endDateNutritionalPlan;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public String getRecommendations() {
@@ -112,6 +112,4 @@ public class NutritionalPlan {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
-
-
 }

@@ -34,22 +34,15 @@ public class NutritionalPlanController {
         NutritionalPlan tp = m.map(dto, NutritionalPlan.class);
         npS.insert(tp);
     }
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody NutritionalPlanDTO dto) {
         ModelMapper m = new ModelMapper();
         NutritionalPlan tp = m.map(dto, NutritionalPlan.class);
         npS.insert(tp);
     }
 
-    @PutMapping("/{id}")
-    public void hideNutritionalPlanByID(@PathVariable("id") Integer idNplan){
-        npS.hide(idNplan);
+    @PutMapping("/hide/{id}")
+    public void hideNutritionalPlanByID(@PathVariable("id") Integer idNutritionalPlan){
+        npS.hideNutritionalPlan(idNutritionalPlan);
     }
-
-    /*
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        npS.delete(id);
-    }
-    */
 }

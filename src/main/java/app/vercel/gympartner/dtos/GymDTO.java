@@ -1,8 +1,12 @@
 package app.vercel.gympartner.dtos;
 
 import app.vercel.gympartner.entities.Membership;
+import app.vercel.gympartner.entities.Owner;
 
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 public class GymDTO {
     private int idGym;
@@ -11,7 +15,7 @@ public class GymDTO {
     private String ruc;
     private String rs;
     private boolean hide;
-    private Membership membership;
+    private Owner owner;
 
     public int getIdGym() {
         return idGym;
@@ -61,11 +65,11 @@ public class GymDTO {
         this.hide = hide;
     }
 
-    public Membership getMembership() {
-        return membership;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public void setMembership(Membership membership) {
-        this.membership = membership;
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }

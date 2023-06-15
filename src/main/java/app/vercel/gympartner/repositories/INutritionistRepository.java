@@ -1,19 +1,18 @@
 package app.vercel.gympartner.repositories;
 
-import app.vercel.gympartner.entities.NutritionalPlan;
+import app.vercel.gympartner.entities.Nutritionist;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 
 @Repository
-public interface INutritionalPlanRepository extends JpaRepository<NutritionalPlan, Integer> {
+public interface INutritionistRepository extends JpaRepository<Nutritionist, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE NutritionalPlan nP SET nP.hide = true WHERE nP.idNutritionalPlan =:id")
-    void hideNutritionalPlan(@Param("id") Integer id);
-
+    @Query("UPDATE Nutritionist n SET n.hide = true WHERE n.idUser =:id")
+    void hideNutritionist(@Param("id") Integer id);
 }

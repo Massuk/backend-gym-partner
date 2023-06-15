@@ -44,7 +44,7 @@ public class TrainingPlanController {
     }
 
     // Update Training Plan
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody TrainingPlanDTO dto) {
         ModelMapper m = new ModelMapper();
         TrainingPlan tp = m.map(dto, TrainingPlan.class);

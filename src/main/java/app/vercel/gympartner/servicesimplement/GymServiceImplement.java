@@ -14,26 +14,19 @@ public class GymServiceImplement implements IGymService {
     @Autowired
     private IGymRepository gR;
     @Override
-    public void create(Gym gym) {
+    public void insert(Gym gym) {
         gR.save(gym);
     }
     @Override
     public List<Gym> list() {
         return gR.findAll();
     }
-
-    @Override
-    public void delete(int idGym) {
-        gR.deleteById(idGym);
-    }
-
     @Override
     public Gym listId(int idGym) {
         return gR.findById(idGym).orElse(new Gym());
     }
-
     @Override
-    public void hide(int id) {
+    public void hideGym(int id) {
         gR.hideGym(id);
     }
 }
