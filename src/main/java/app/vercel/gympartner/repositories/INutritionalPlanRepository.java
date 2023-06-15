@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface INutritionalPlanRepository extends JpaRepository<NutritionalPlan, Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE NutritionalPlan np SET np.status = false WHERE np.idNutritionalPlan =:id")
-    void ocultarPlanNutricional(@Param("id") Integer id);
+    @Query("UPDATE NutritionalPlan np SET np.hide = true WHERE np.idNutritionalPlan =:id")
+    void hideNPlan(@Param("id") Integer id);
+
 }

@@ -36,9 +36,9 @@ public class RoutineController {
         Routine r = m.map(dto, Routine.class);
         rS.insert(r);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/hide/{id}")
     public void hideExercise(@PathVariable("id") Integer idRoutine){
-        rS.ocultarEjercicio(idRoutine);
+        rS.hideExercise(idRoutine);
     }
     /*
     @DeleteMapping("/{id}")

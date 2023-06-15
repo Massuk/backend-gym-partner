@@ -26,8 +26,5 @@ public class ExerciseServiceImplement implements IExerciseService {
     @Override
     public Exercise listid(int idExercise) {return eR.findById(idExercise).orElse(new Exercise());}
 
-    @Override
-    public void hideExercise(int id) {
-        eR.ocultarEjercicio(id);
-    }
+
 }

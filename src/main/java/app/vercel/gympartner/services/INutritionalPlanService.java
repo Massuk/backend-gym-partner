@@ -9,5 +9,6 @@ public interface INutritionalPlanService {
     List<NutritionalPlan> list();
     public void delete(int idNutritionalPlan);
     public NutritionalPlan listId(int idNutritionalPlan);
-    void ocultarPlanNutricional(int id);
+    void hide(int id);
+
 }

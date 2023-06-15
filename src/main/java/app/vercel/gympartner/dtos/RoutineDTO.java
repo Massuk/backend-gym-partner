@@ -7,7 +7,7 @@ public class RoutineDTO {
     private String title;
     private String day;
     private String description;
-    private boolean status;
+    private boolean hide;
     private TrainingPlan tPlan;
 
     public int getIdRoutine() {
@@ -50,11 +50,11 @@ public class RoutineDTO {
         this.description = description;
     }
 
-    public boolean isStatus() {
-        return status;
+    public boolean isHide() {
+        return hide;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setHide(boolean hide) {
+        this.hide = hide;
     }
 }

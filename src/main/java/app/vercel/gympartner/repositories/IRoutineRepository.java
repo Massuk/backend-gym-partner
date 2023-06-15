@@ -13,6 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 public interface IRoutineRepository extends JpaRepository<Routine,Integer> {
     @Transactional
     @Modifying
-    @Query("UPDATE Routine r SET r.status = false WHERE r.idRoutine =:id")
-    void ocultarEjercicio(@Param("id") Integer id);
+    @Query("UPDATE Routine r SET r.hide = true WHERE r.idRoutine =:id")
+    void hideExercise(@Param("id") Integer id);
 }

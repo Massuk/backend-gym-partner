@@ -10,68 +10,68 @@ public class Exercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idExercise;
 
-    @Column(name = "nameExercise", length = 30, nullable = false)
-    private String nameExercise;
-    @Column(name = "repetitionsExercise",length = 2, nullable = false)
-    private int repetitionsExercise;
-    @Column(name = "seriesExercise",length = 2, nullable = false)
-    private int seriesExercise;
-    @Column(name = "kilogramsExercise",length = 2, nullable = false)
-    private int kilogramsExercise;
-    @Column(name = "statusExercise")
-    private boolean status;
+    @Column(name = "name", length = 50, nullable = false)
+    private String name;
+    @Column(name = "repetitions", nullable = false)
+    private int repetitions;
+    @Column(name = "series", nullable = false)
+    private int series;
+    @Column(name = "kilograms", nullable = false)
+    private int kilograms;
+
+
     @ManyToOne
     @JoinColumn(name = "id_routine")
     private Routine routine;
     public Exercise(){}
 
-    public Exercise(int idExercise, String nameExercise, int repetitionsExercise, int seriesExercise, int kilogramsExercise, Routine routine) {
+    public Exercise(int idExercise, String name, int repetitions, int series, int kilograms, Routine routine) {
         this.idExercise = idExercise;
-        this.nameExercise = nameExercise;
-        this.repetitionsExercise = repetitionsExercise;
-        this.seriesExercise = seriesExercise;
-        this.kilogramsExercise = kilogramsExercise;
+        this.name = name;
+        this.repetitions = repetitions;
+        this.series = series;
+        this.kilograms = kilograms;
         this.routine = routine;
-        this.status = true;
     }
 
     public int getIdExercise() {
         return idExercise;
     }
 
-    public String getNameExercise() {
-        return nameExercise;
+    public String getName() {
+        return name;
     }
 
-    public int getRepetitionsExercise() {
-        return repetitionsExercise;
+    public int getRepetitions() {
+        return repetitions;
     }
 
-    public int getSeriesExercise() {
-        return seriesExercise;
+    public int getSeries() {
+        return series;
     }
 
-    public int getKilogramsExercise() {
-        return kilogramsExercise;
+    public int getKilograms() {
+        return kilograms;
     }
 
     public void setIdExercise(int idExercise) {
         this.idExercise = idExercise;
     }
 
-    public void setNameExercise(String nameExercise) {
-        this.nameExercise = nameExercise;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setRepetitionsExercise(int repetitionsExercise) {
-        this.repetitionsExercise = repetitionsExercise;
+    public void setRepetitions(int repetitions) {
+        this.repetitions = repetitions;
     }
 
-    public void setSeriesExercise(int seriesExercise) {
-        this.seriesExercise = seriesExercise;
+    public void setSeries(int series) {
+        this.series = series;
     }
-    public void setKilogramsExercise(int kilogramsExercise) {
-        this.kilogramsExercise = kilogramsExercise;
+
+    public void setKilograms(int kilograms) {
+        this.kilograms = kilograms;
     }
 
     public Routine getRoutine() {
@@ -82,11 +82,5 @@ public class Exercise {
         this.routine = routine;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 }

@@ -18,7 +18,6 @@ public class TrainingPlanController {
     @Autowired
     private ITrainingPlanService tpS;
 
-
     // List all TrainingPlans
     @GetMapping
     public List<TrainingPlanDTO> list() {
@@ -51,10 +50,11 @@ public class TrainingPlanController {
         TrainingPlan tp = m.map(dto, TrainingPlan.class);
         tpS.insert(tp);
     }
+
     //HIDE TRAINING PLAN
-    @PutMapping("/{id}")
+    @PutMapping("/hide/{id}")
     public void hideTrainingPlan(@PathVariable("id") Integer idTplan){
-        tpS.ocultarPlanEntrenamiento(idTplan);
+        tpS.hideTrainingPlan(idTplan);
     }
 
     /* Delete Training Plan by ID

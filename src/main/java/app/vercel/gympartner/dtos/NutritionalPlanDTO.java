@@ -4,15 +4,15 @@ import java.time.LocalDate;
 
 public class NutritionalPlanDTO {
     private int idNutritionalPlan;
-    private String titleNutritionalPlan;
-    private String statusNutritionalPlan;
-    private String objectiveNutritionalPlan;
-    private String descriptionNutritionalPlan;
-    private LocalDate startDateNutritionalPlan;
-    private LocalDate endDateNutritionalPlan;
-    private String recommendationsNutritionalPlan;
+    private String title;
+    private String objective;
+    private String description;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String recommendations;
+    private String status;
+    private boolean hide;
 
-    private boolean status;
 
     public int getIdNutritionalPlan() {
         return idNutritionalPlan;
@@ -22,68 +22,70 @@ public class NutritionalPlanDTO {
         this.idNutritionalPlan = idNutritionalPlan;
     }
 
-    public String getTitleNutritionalPlan() {
-        return titleNutritionalPlan;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitleNutritionalPlan(String titleNutritionalPlan) {
-        this.titleNutritionalPlan = titleNutritionalPlan;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getStatusNutritionalPlan() {
-        return statusNutritionalPlan;
-    }
-
-    public void setStatusNutritionalPlan(String statusNutritionalPlan) {
-        this.statusNutritionalPlan = statusNutritionalPlan;
-    }
-
-    public String getObjectiveNutritionalPlan() {
-        return objectiveNutritionalPlan;
-    }
-
-    public void setObjectiveNutritionalPlan(String objectiveNutritionalPlan) {
-        this.objectiveNutritionalPlan = objectiveNutritionalPlan;
-    }
-
-    public String getDescriptionNutritionalPlan() {
-        return descriptionNutritionalPlan;
-    }
-
-    public void setDescriptionNutritionalPlan(String descriptionNutritionalPlan) {
-        this.descriptionNutritionalPlan = descriptionNutritionalPlan;
-    }
-
-    public LocalDate getStartDateNutritionalPlan() {
-        return startDateNutritionalPlan;
-    }
-
-    public void setStartDateNutritionalPlan(LocalDate startDateNutritionalPlan) {
-        this.startDateNutritionalPlan = startDateNutritionalPlan;
-    }
-
-    public LocalDate getEndDateNutritionalPlan() {
-        return endDateNutritionalPlan;
-    }
-
-    public void setEndDateNutritionalPlan(LocalDate endDateNutritionalPlan) {
-        this.endDateNutritionalPlan = endDateNutritionalPlan;
-    }
-
-    public String getRecommendationsNutritionalPlan() {
-        return recommendationsNutritionalPlan;
-    }
-
-    public void setRecommendationsNutritionalPlan(String recommendationsNutritionalPlan) {
-        this.recommendationsNutritionalPlan = recommendationsNutritionalPlan;
-    }
-
-    public boolean isStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getObjective() {
+        return objective;
+    }
+
+    public void setObjective(String objective) {
+        this.objective = objective;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getRecommendations() {
+        return recommendations;
+    }
+
+    public void setRecommendations(String recommendations) {
+        this.recommendations = recommendations;
+    }
+
+    public boolean isHide() {
+        return hide;
+    }
+
+    public void setHide(boolean hide) {
+        this.hide = hide;
+    }
+
+
 
 }

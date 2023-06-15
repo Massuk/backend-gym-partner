@@ -41,16 +41,15 @@ public class NutritionalPlanController {
         npS.insert(tp);
     }
 
-    //HIDE Nutricional Plan
     @PutMapping("/{id}")
-    public void hideNutricionalPlan(@PathVariable("id") Integer idNutritionalPlan){
-        npS.ocultarPlanNutricional(idNutritionalPlan);
+    public void hideNutritionalPlanByID(@PathVariable("id") Integer idNplan){
+        npS.hide(idNplan);
     }
 
-    /*@DeleteMapping("/{id}")
+    /*
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         npS.delete(id);
     }
-
-     */
+    */
 }
