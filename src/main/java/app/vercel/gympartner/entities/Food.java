@@ -19,22 +19,22 @@ public class Food {
     private int caloriesFood;
     @Column(name = "proteinsFood", length = 10, nullable = false)
     private int proteinsFood;
-    @Column(name = "status", nullable = false)
-    private boolean status;
-
+    @ManyToOne
+    @JoinColumn(name = "id_meal")
+    private Meal meal;
 
     // --- Constructors --- //
     public Food() {
 
     }
 
-    public Food(int idFood, String titleFood, int portionsFood, int caloriesFood, int proteinsFood) {
+    public Food(int idFood, String titleFood, int portionsFood, int caloriesFood, int proteinsFood, Meal meal) {
         this.idFood = idFood;
         this.titleFood = titleFood;
         this.portionsFood = portionsFood;
         this.caloriesFood = caloriesFood;
         this.proteinsFood = proteinsFood;
-        this.status = true;
+        this.meal = meal;
     }
 
     // --- Getters and Setters ---//
@@ -77,7 +77,11 @@ public class Food {
         this.proteinsFood = proteinsFood;
     }
 
-    public boolean isStatus() { return status; }
+    public Meal getMeal() {
+        return meal;
+    }
 
-    public void setStatus(boolean status) { this.status = status; }
+    public void setMeal(Meal meal) {
+        this.meal = meal;
+    }
 }

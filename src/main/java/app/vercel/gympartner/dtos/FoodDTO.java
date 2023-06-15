@@ -1,5 +1,7 @@
 package app.vercel.gympartner.dtos;
 
+import app.vercel.gympartner.entities.Meal;
+
 import javax.persistence.Column;
 
 public class FoodDTO {
@@ -8,7 +10,7 @@ public class FoodDTO {
     private int portionsFood;
     private int caloriesFood;
     private int proteinsFood;
-    private boolean status;
+    private Meal meal;
 
 
     // --- Getters and Setters ---//
@@ -51,11 +53,11 @@ public class FoodDTO {
         this.proteinsFood = proteinsFood;
     }
 
-    public boolean isStatus() {
-        return status;
+    public Meal getMeal() {
+        return meal;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setMeal(Meal meal) {
+        this.meal = meal;
     }
 }

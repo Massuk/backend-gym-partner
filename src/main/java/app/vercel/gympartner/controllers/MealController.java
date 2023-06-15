@@ -28,16 +28,19 @@ public class MealController {
             return m.map(x, MealDTO.class);
         }).collect(Collectors.toList());
     }
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody MealDTO dto) {
         ModelMapper m = new ModelMapper();
         Meal r = m.map(dto, Meal.class);
         mS.insert(r);
     }
-    @PutMapping("/{id}")
-    public void hideFood(@PathVariable("id") Integer idRoutine){
-        mS.ocultarComida(idRoutine);
+    @PutMapping("/hide/{id}")
+    public void hideMeal(@PathVariable("id") Integer idMeal){
+        mS.ocultarComida(idMeal);
     }
+
+
+
     /*
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
