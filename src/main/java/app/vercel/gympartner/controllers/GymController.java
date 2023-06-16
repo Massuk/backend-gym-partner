@@ -35,7 +35,7 @@ public class GymController {
         GymDTO dto = m.map(gS.listId(id), GymDTO.class);
         return dto;
     }
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody GymDTO dto){
         ModelMapper m = new ModelMapper();
         Gym g = m.map(dto, Gym.class);

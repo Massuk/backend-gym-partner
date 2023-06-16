@@ -46,7 +46,7 @@ public class ExerciseController {
         return dto;
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody ExerciseDTO dto){
         ModelMapper m = new ModelMapper();
         Exercise e = m.map(dto,Exercise.class);

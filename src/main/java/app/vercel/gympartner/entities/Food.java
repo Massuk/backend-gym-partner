@@ -11,14 +11,12 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFood;
-    @Column(name = "titleFood", length = 30, nullable = false)
-    private String titleFood;
-    @Column(name = "portionsFood", length = 10, nullable = false)
+    @Column(name = "title", length = 30, nullable = false)
+    private String title;
+    @Column(name = "portions", length = 10, nullable = false)
     private int portionsFood;
-    @Column(name = "caloriesFood", length = 10, nullable = false)
-    private int caloriesFood;
-    @Column(name = "proteinsFood", length = 10, nullable = false)
-    private int proteinsFood;
+    @Column(name = "calories", length = 10, nullable = false)
+    private int calories;
     @ManyToOne
     @JoinColumn(name = "id_meal")
     private Meal meal;
@@ -28,29 +26,30 @@ public class Food {
 
     }
 
-    public Food(int idFood, String titleFood, int portionsFood, int caloriesFood, int proteinsFood, Meal meal) {
+    public Food(int idFood, String title, int portionsFood, int calories, Meal meal) {
         this.idFood = idFood;
-        this.titleFood = titleFood;
+        this.title = title;
         this.portionsFood = portionsFood;
-        this.caloriesFood = caloriesFood;
-        this.proteinsFood = proteinsFood;
+        this.calories = calories;
         this.meal = meal;
     }
 
     // --- Getters and Setters ---//
+
     public int getIdFood() {
         return idFood;
     }
 
-    public void setIdFood(int idFood) {this.idFood = idFood;
+    public void setIdFood(int idFood) {
+        this.idFood = idFood;
     }
 
-    public String getTitleFood() {
-        return titleFood;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitleFood(String titleFood) {
-        this.titleFood = titleFood;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getPortionsFood() {
@@ -61,20 +60,12 @@ public class Food {
         this.portionsFood = portionsFood;
     }
 
-    public int getCaloriesFood() {
-        return caloriesFood;
+    public int getCalories() {
+        return calories;
     }
 
-    public void setCaloriesFood(int caloriesFood) {
-        this.caloriesFood = caloriesFood;
-    }
-
-    public int getProteinsFood() {
-        return proteinsFood;
-    }
-
-    public void setProteinsFood(int proteinsFood) {
-        this.proteinsFood = proteinsFood;
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public Meal getMeal() {
