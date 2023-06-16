@@ -42,7 +42,7 @@ public class FoodController {
     }
 
     // Update Food
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody FoodDTO dto){
         ModelMapper m = new ModelMapper();
         Food f = m.map(dto, Food.class);

@@ -11,10 +11,10 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFood;
-    @Column(name = "title", length = 30, nullable = false)
-    private String title;
+    @Column(name = "name", length = 30, nullable = false)
+    private String name;
     @Column(name = "portions", length = 10, nullable = false)
-    private int portionsFood;
+    private int portions;
     @Column(name = "calories", length = 10, nullable = false)
     private int calories;
     @ManyToOne
@@ -26,10 +26,10 @@ public class Food {
 
     }
 
-    public Food(int idFood, String title, int portionsFood, int calories, Meal meal) {
+    public Food(int idFood, String name, int portions, int calories, Meal meal) {
         this.idFood = idFood;
-        this.title = title;
-        this.portionsFood = portionsFood;
+        this.name = name;
+        this.portions = portions;
         this.calories = calories;
         this.meal = meal;
     }
@@ -44,20 +44,20 @@ public class Food {
         this.idFood = idFood;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getPortionsFood() {
-        return portionsFood;
+    public int getPortions() {
+        return portions;
     }
 
-    public void setPortionsFood(int portionsFood) {
-        this.portionsFood = portionsFood;
+    public void setPortions(int portions) {
+        this.portions = portions;
     }
 
     public int getCalories() {

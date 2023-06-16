@@ -6,14 +6,14 @@ import javax.persistence.Column;
 
 public class FoodDTO {
     private int idFood;
-    private String titleFood;
-    private int portionsFood;
-    private int caloriesFood;
-    private int proteinsFood;
+    private String name;
+    private int portions;
+    private int calories;
     private Meal meal;
 
 
     // --- Getters and Setters ---//
+
 
     public int getIdFood() {
         return idFood;
@@ -23,34 +23,28 @@ public class FoodDTO {
         this.idFood = idFood;
     }
 
-    public String getTitleFood() { return titleFood;
+    public String getName() {
+        return name;
     }
 
-    public void setTitleFood(String titleFood) {
-        this.titleFood = titleFood;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getPortionsFood() { return portionsFood;
+    public int getPortions() {
+        return portions;
     }
 
-    public void setPortionsFood(int portionsFood) {
-        this.portionsFood = portionsFood;
+    public void setPortions(int portions) {
+        this.portions = portions;
     }
 
-    public int getCaloriesFood() {
-        return caloriesFood;
+    public int getCalories() {
+        return calories;
     }
 
-    public void setCaloriesFood(int caloriesFood) {
-        this.caloriesFood = caloriesFood;
-    }
-
-    public int getProteinsFood() {
-        return proteinsFood;
-    }
-
-    public void setProteinsFood(int proteinsFood) {
-        this.proteinsFood = proteinsFood;
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public Meal getMeal() {
