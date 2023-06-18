@@ -36,7 +36,7 @@ public class MealController {
     }
     @PutMapping("/hide/{id}")
     public void hideMeal(@PathVariable("id") Integer idMeal){
-        mS.ocultarComida(idMeal);
+        mS.hideMeal(idMeal);
     }
 
 

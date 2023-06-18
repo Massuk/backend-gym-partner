@@ -30,7 +30,7 @@ public class MealServiceImplement implements IMealService {
     }
 
     @Override
-    public void ocultarComida(int id) {
+    public void hideMeal(int id) {
 
     }
 }

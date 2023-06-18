@@ -13,5 +13,5 @@ public interface IMealRepository extends JpaRepository<Meal, Integer> {
     @Transactional
     @Modifying
     @Query("UPDATE Meal m SET m.hide = false WHERE m.idMeal =:id")
-    void ocultarComida(@Param("id") Integer id);
+    void hideMeal(@Param("id") Integer id);
 }

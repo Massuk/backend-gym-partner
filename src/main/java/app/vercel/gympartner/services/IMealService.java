@@ -8,5 +8,5 @@ public interface IMealService {
     public void insert(Meal meal);
     List<Meal> list();
     public void delete(int idNutritionalPlan);
-    void ocultarComida(int id);
+    void hideMeal(int id);
 }
