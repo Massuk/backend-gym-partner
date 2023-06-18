@@ -15,8 +15,8 @@ public class Client extends User{
     private Trainer trainer;
     public Client() {
     }
-    public Client(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, Nutritionist nutritionist, Trainer trainer) {
-        super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, hide, password, role);
+    public Client(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, boolean status, Nutritionist nutritionist, Trainer trainer) {
+        super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, hide, password, role, status);
         this.nutritionist = nutritionist;
         this.trainer = trainer;
     }

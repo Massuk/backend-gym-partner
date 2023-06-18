@@ -27,6 +27,8 @@ public class User {
     private String email;
     @Column(name = "dni", length = 8,nullable = false)
     private String dni;
+    @Column(name = "status", nullable = false)
+    private boolean status;
     @Column(name = "hide", nullable = false)
     private boolean hide;
     @Column(name = "password", length = 250, nullable = false)
@@ -37,7 +39,7 @@ public class User {
 
     public User() {
     }
-    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role) {
+    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, boolean status) {
         this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
@@ -50,6 +52,7 @@ public class User {
         this.hide = hide;
         this.password = password;
         this.role = role;
+        this.status = status;
     }
 
     public int getIdUser() {
@@ -123,5 +126,13 @@ public class User {
     }
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

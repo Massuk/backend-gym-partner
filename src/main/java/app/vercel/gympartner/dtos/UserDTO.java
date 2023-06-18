@@ -14,6 +14,7 @@ public class UserDTO {
     private int cellphone;
     private String email;
     private String dni;
+    private boolean status;
     private boolean hide;
     private String password;
     private Role role;
@@ -78,6 +79,15 @@ public class UserDTO {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     public String getPassword() {
         return password;
     }
