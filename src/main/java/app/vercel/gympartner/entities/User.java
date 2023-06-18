@@ -29,6 +29,8 @@ public class User {
     private String dni;
     @Column(name = "hide", nullable = false)
     private boolean hide;
+    @Column(name = "status", length = 30, nullable = false)
+    private String status;
     @Column(name = "password", length = 250, nullable = false)
     private String password;
     @ManyToOne
@@ -37,7 +39,7 @@ public class User {
 
     public User() {
     }
-    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role) {
+    public User(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String status, String password, Role role) {
         this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
@@ -48,6 +50,7 @@ public class User {
         this.email = email;
         this.dni = dni;
         this.hide = hide;
+        this.status = status;
         this.password = password;
         this.role = role;
     }
@@ -111,6 +114,12 @@ public class User {
     }
     public void setHide(boolean hide) {
         this.hide = hide;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
     public String getPassword() {
         return password;
