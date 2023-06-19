@@ -10,7 +10,7 @@ public class NutritionalPlanDTO {
     private LocalDate startDate;
     private LocalDate endDate;
     private String recommendations;
-    private String status;
+    private boolean status;
     private boolean hide;
 
     public int getIdNutritionalPlan() {
@@ -69,11 +69,11 @@ public class NutritionalPlanDTO {
         this.recommendations = recommendations;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

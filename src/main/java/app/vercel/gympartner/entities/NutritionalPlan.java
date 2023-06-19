@@ -20,8 +20,8 @@ public class NutritionalPlan {
     private LocalDate endDate;
     @Column (name = "recommendations", length = 250, nullable = false)
     private String recommendations;
-    @Column (name = "status", length = 30, nullable = false)
-    private String status;
+    @Column (name = "status", nullable = false)
+    private boolean status;
     @Column (name = "hide", nullable = false)
     private boolean hide;
 
@@ -29,7 +29,7 @@ public class NutritionalPlan {
     public NutritionalPlan() {
     }
 
-    public NutritionalPlan(int idNutritionalPlan, String title, String objective, String description, LocalDate startDate, LocalDate endDate, String recommendations, String status, boolean hide) {
+    public NutritionalPlan(int idNutritionalPlan, String title, String objective, String description, LocalDate startDate, LocalDate endDate, String recommendations, boolean status, boolean hide) {
         this.idNutritionalPlan = idNutritionalPlan;
         this.title = title;
         this.objective = objective;
@@ -97,11 +97,11 @@ public class NutritionalPlan {
         this.recommendations = recommendations;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

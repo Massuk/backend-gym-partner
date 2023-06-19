@@ -15,7 +15,7 @@ public class TrainingPlanDTO {
     private String level;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String status;
+    private boolean status;
     private boolean hide;
 
     // --- Getters and Setters ---//
@@ -77,11 +77,11 @@ public class TrainingPlanDTO {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
