@@ -17,8 +17,8 @@ public class Trainer extends User{
 
     public Trainer() {
     }
-    public Trainer(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, boolean status, double salary, LocalDate yearHired, Gym gym) {
-        super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, hide, password, role, status);
+    public Trainer(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, Role role, double salary, LocalDate yearHired, Gym gym) {
+        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, role);
         this.salary = salary;
         this.yearHired = yearHired;
         this.gym = gym;

@@ -26,6 +26,6 @@ public class OwnerServiceImplement implements IOwnerService {
     }
     @Override
     public void hideOwner(int id) {
-        oR.hideOwner(id);
+        //oR.hideOwner(id);
     }
 }

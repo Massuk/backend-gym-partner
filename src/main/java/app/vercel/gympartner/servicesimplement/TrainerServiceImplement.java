@@ -27,6 +27,6 @@ public class TrainerServiceImplement implements ITrainerService {
     }
     @Override
     public void hideTrainer(int id) {
-        tR.hideTrainer(id);
+        //tR.hideTrainer(id);
     }
 }

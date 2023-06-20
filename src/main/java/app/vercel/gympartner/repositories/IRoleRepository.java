@@ -11,8 +11,5 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface IRoleRepository extends JpaRepository<Role, Integer> {
-    @Transactional
-    @Modifying
-    @Query("UPDATE Role r SET r.hide = true WHERE r.idRole =:id")
-    void hideRole(@Param("id") Integer id);
+
 }

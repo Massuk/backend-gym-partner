@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Owner extends User{
     public Owner() {
     }
-    public Owner(int idUser, String name, String lastname, String gender, int age, LocalDate birthDate, int cellphone, String email, String dni, boolean hide, String password, Role role, boolean status) {
-        super(idUser, name, lastname, gender, age, birthDate, cellphone, email, dni, hide, password, role, status);
+    public Owner(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, Role role) {
+        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, role);
     }
 }

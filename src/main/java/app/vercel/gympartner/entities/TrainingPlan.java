@@ -24,8 +24,8 @@ public class TrainingPlan {
     private LocalDate startDate;
     @Column(name = "endDate", nullable = false)
     private LocalDate endDate;
-    @Column(name = "status", length = 30, nullable = false)
-    private String status;
+    @Column(name = "status", nullable = false)
+    private boolean status;
     @Column(name = "hide", nullable = false)
     private boolean hide;
 
@@ -34,7 +34,7 @@ public class TrainingPlan {
     public TrainingPlan() {
     }
 
-    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, String status, boolean hide) {
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean status, boolean hide) {
         this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
@@ -105,11 +105,11 @@ public class TrainingPlan {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

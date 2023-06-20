@@ -27,6 +27,5 @@ public class RoleServiceImplement implements IRoleService {
     }
     @Override
     public void hideRole(int id) {
-        rR.hideRole(id);
     }
 }

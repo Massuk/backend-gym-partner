@@ -10,15 +10,12 @@ public class Role {
     private int idRole;
     @Column(name = "name", length = 50, nullable = false)
     private String name;
-    @Column(name = "hide", nullable = false)
-    private boolean hide;
 
     public Role() {
     }
-    public Role(int idRole, String name, boolean hide) {
+    public Role(int idRole, String name) {
         this.idRole = idRole;
         this.name = name;
-        this.hide = hide;
     }
 
     public int getIdRole() {
@@ -33,10 +30,5 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-    public boolean isHide() {
-        return hide;
-    }
-    public void setHide(boolean hide) {
-        this.hide = hide;
-    }
+
 }
