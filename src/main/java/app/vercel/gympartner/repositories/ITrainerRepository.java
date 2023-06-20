@@ -11,8 +11,8 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface ITrainerRepository extends JpaRepository<Trainer, Integer> {
-    @Transactional
-    @Modifying
-    @Query("UPDATE Trainer t SET t.hide = true WHERE t.idUser =:id")
-    void hideTrainer(@Param("id") Integer id);
+//    @Transactional
+//    @Modifying
+//    @Query("UPDATE Trainer t SET t.hide = true WHERE t.idUser =:id")
+//    void hideTrainer(@Param("id") Integer id);
 }

@@ -27,6 +27,6 @@ public class NutritionistServiceImplement implements INutritionistService {
     }
     @Override
     public void hideNutritionist(int id) {
-        nR.hideNutritionist(id);
+        //nR.hideNutritionist(id);
     }
 }

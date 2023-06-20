@@ -27,6 +27,6 @@ public class ClientServiceImplement implements IClientService {
     }
     @Override
     public void hideClient(int id) {
-        cR.hideClient(id);
+        //cR.hideClient(id);
     }
 }

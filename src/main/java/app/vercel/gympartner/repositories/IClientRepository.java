@@ -11,8 +11,8 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface IClientRepository extends JpaRepository<Client, Integer> {
-    @Transactional
-    @Modifying
-    @Query("UPDATE Client c SET c.hide = true WHERE c.idUser =:id")
-    void hideClient(@Param("id") Integer id);
+//    @Transactional
+//    @Modifying
+//    @Query("UPDATE Client c SET c.hide = true WHERE c.idUser =:id")
+//    void hideClient(@Param("id") Integer id);
 }
