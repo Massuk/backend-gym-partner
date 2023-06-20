@@ -14,6 +14,7 @@ public class UserDTO {
     private String gender;
     private LocalDate birthDate;
     private String cellphone;
+    private Role role;
 
     public int getIdUser() {
         return idUser;
@@ -77,5 +78,13 @@ public class UserDTO {
 
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
