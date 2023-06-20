@@ -24,8 +24,4 @@ public class OwnerServiceImplement implements IOwnerService {
     public Owner listId(int id) {
         return oR.findById(id).orElse(new Owner());
     }
-    @Override
-    public void hideOwner(int id) {
-        //oR.hideOwner(id);
-    }
 }

@@ -11,8 +11,4 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface IOwnerRepository extends JpaRepository<Owner, Integer> {
-//    @Transactional
-//    @Modifying
-//    @Query("UPDATE Owner o SET o.hide = true WHERE o.idUser =:id")
-//    void hideOwner(@Param("id") Integer id);
 }

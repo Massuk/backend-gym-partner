@@ -15,13 +15,12 @@ public class Exercise {
     @Column(name = "series", nullable = false)
     private int series;
     @Column(name = "kilograms", nullable = false)
-    private int kilograms;
-
+    private double kilograms;
     @ManyToOne
-    @JoinColumn(name = "id_routine")
+    @JoinColumn(name = "id_routine", nullable = false)
     private Routine routine;
-    public Exercise(){}
 
+    public Exercise(){}
     public Exercise(int idExercise, String name, int repetitions, int series, int kilograms, Routine routine) {
         this.idExercise = idExercise;
         this.name = name;
@@ -34,50 +33,37 @@ public class Exercise {
     public int getIdExercise() {
         return idExercise;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getRepetitions() {
-        return repetitions;
-    }
-
-    public int getSeries() {
-        return series;
-    }
-
-    public int getKilograms() {
-        return kilograms;
-    }
-
     public void setIdExercise(int idExercise) {
         this.idExercise = idExercise;
     }
-
+    public String getName() {
+        return name;
+    }
     public void setName(String name) {
         this.name = name;
     }
-
+    public int getRepetitions() {
+        return repetitions;
+    }
     public void setRepetitions(int repetitions) {
         this.repetitions = repetitions;
     }
-
+    public int getSeries() {
+        return series;
+    }
     public void setSeries(int series) {
         this.series = series;
     }
-
-    public void setKilograms(int kilograms) {
+    public double getKilograms() {
+        return kilograms;
+    }
+    public void setKilograms(double kilograms) {
         this.kilograms = kilograms;
     }
-
     public Routine getRoutine() {
         return routine;
     }
-
     public void setRoutine(Routine routine) {
         this.routine = routine;
     }
-
-
 }

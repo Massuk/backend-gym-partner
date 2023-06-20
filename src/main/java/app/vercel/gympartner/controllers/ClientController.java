@@ -41,8 +41,4 @@ public class ClientController {
         Client c = m.map(dto, Client.class);
         cS.insert(c);
     }
-    @PutMapping("/hide/{id}")
-    public void hideClientByID(@PathVariable("id") Integer id){
-        cS.hideClient(id);
-    }
 }

@@ -7,8 +7,6 @@ import java.time.LocalDate;
 @Table(name = "nutritionists")
 @PrimaryKeyJoinColumn(name = "idNutritionist", referencedColumnName = "idUser")
 public class Nutritionist extends User{
-    @Column(name = "salary", nullable = false)
-    private double salary;
     @Column(name = "yearHired", nullable = false)
     private LocalDate yearHired;
     @ManyToOne
@@ -17,19 +15,12 @@ public class Nutritionist extends User{
 
     public Nutritionist() {
     }
-    public Nutritionist(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, Role role, double salary, LocalDate yearHired, Gym gym) {
-        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, role);
-        this.salary = salary;
+    public Nutritionist(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role, LocalDate yearHired, Gym gym) {
+        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, status, role);
         this.yearHired = yearHired;
         this.gym = gym;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
     public LocalDate getYearHired() {
         return yearHired;
     }

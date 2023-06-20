@@ -8,7 +8,6 @@ import java.util.List;
 @Entity
 @Table(name = "trainingPlans")
 public class TrainingPlan {
-    // --- ORM Setup --- //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTrainingPlan;
@@ -28,13 +27,13 @@ public class TrainingPlan {
     private boolean status;
     @Column(name = "hide", nullable = false)
     private boolean hide;
+    @ManyToOne
+    @JoinColumn(name = "idClient", nullable = false)
+    private Client client;
 
-
-    // --- Constructors --- //
     public TrainingPlan() {
     }
-
-    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean status, boolean hide) {
+    public TrainingPlan(int idTrainingPlan, String title, String description, String objective, String level, LocalDate startDate, LocalDate endDate, boolean status, boolean hide, Client client) {
         this.idTrainingPlan = idTrainingPlan;
         this.title = title;
         this.description = description;
@@ -44,80 +43,67 @@ public class TrainingPlan {
         this.endDate = endDate;
         this.status = status;
         this.hide = hide;
+        this.client = client;
     }
-
-    // --- Getters and Setters ---//
-
 
     public int getIdTrainingPlan() {
         return idTrainingPlan;
     }
-
     public void setIdTrainingPlan(int idTrainingPlan) {
         this.idTrainingPlan = idTrainingPlan;
     }
-
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public String getObjective() {
         return objective;
     }
-
     public void setObjective(String objective) {
         this.objective = objective;
     }
-
     public String getLevel() {
         return level;
     }
-
     public void setLevel(String level) {
         this.level = level;
     }
-
     public LocalDate getStartDate() {
         return startDate;
     }
-
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
-
     public LocalDate getEndDate() {
         return endDate;
     }
-
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-
     public boolean isStatus() {
         return status;
     }
-
     public void setStatus(boolean status) {
         this.status = status;
     }
-
     public boolean isHide() {
         return hide;
     }
-
     public void setHide(boolean hide) {
         this.hide = hide;
+    }
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

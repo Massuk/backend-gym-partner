@@ -11,7 +11,7 @@ public class MedicalRecord {
     @Column(name = "name", length = 50, nullable = false)
     private String name;
     @OneToOne
-    @JoinColumn(name = "idClient")
+    @JoinColumn(name = "idClient", nullable = false)
     private Client client;
 
     public MedicalRecord() {

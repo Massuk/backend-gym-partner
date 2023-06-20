@@ -40,8 +40,4 @@ public class TrainerController {
         Trainer t = m.map(dto, Trainer.class);
         tS.insert(t);
     }
-    @PutMapping("/hide/{id}")
-    public void hideTrainerByID(@PathVariable("id") Integer id){
-        tS.hideTrainer(id);
-    }
 }

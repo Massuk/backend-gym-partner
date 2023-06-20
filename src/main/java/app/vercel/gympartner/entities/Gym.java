@@ -19,12 +19,11 @@ public class Gym {
     @Column(name = "hide", nullable = false)
     private boolean hide;
     @ManyToOne
-    @JoinColumn(name = "idOwner")
+    @JoinColumn(name = "idOwner", nullable = false)
     private Owner owner;
 
     public Gym() {
     }
-
     public Gym(int idGym, String name, String code, String ruc, String rs, boolean hide, Owner owner) {
         this.idGym = idGym;
         this.name = name;
@@ -38,55 +37,42 @@ public class Gym {
     public int getIdGym() {
         return idGym;
     }
-
     public void setIdGym(int idGym) {
         this.idGym = idGym;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getCode() {
         return code;
     }
-
     public void setCode(String code) {
         this.code = code;
     }
-
     public String getRuc() {
         return ruc;
     }
-
     public void setRuc(String ruc) {
         this.ruc = ruc;
     }
-
     public String getRs() {
         return rs;
     }
-
     public void setRs(String rs) {
         this.rs = rs;
     }
-
     public boolean isHide() {
         return hide;
     }
-
     public void setHide(boolean hide) {
         this.hide = hide;
     }
-
     public Owner getOwner() {
         return owner;
     }
-
     public void setOwner(Owner owner) {
         this.owner = owner;
     }

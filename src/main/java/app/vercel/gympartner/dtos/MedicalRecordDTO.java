@@ -4,14 +4,14 @@ import app.vercel.gympartner.entities.Client;
 
 
 public class MedicalRecordDTO {
-    private int idMedicalRecord;;
+    private int idMedicalRecord;
     private String name;
     private Client client;
 
-    public int getId() {
+    public int getIdMedicalRecord() {
         return idMedicalRecord;
     }
-    public void setId(int idMedicalRecord) {
+    public void setIdMedicalRecord(int idMedicalRecord) {
         this.idMedicalRecord = idMedicalRecord;
     }
     public String getName() {

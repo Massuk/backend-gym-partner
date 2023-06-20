@@ -8,15 +8,16 @@ import java.time.LocalDate;
 @PrimaryKeyJoinColumn(name = "idClient", referencedColumnName = "idUser")
 public class Client extends User{
     @ManyToOne
-    @JoinColumn(name = "idNutritionist")
+    @JoinColumn(name = "idNutritionist", nullable = false)
     private Nutritionist nutritionist;
     @ManyToOne
-    @JoinColumn(name = "idTrainer")
+    @JoinColumn(name = "idTrainer", nullable = false)
     private Trainer trainer;
+
     public Client() {
     }
-    public Client(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, Role role, Nutritionist nutritionist, Trainer trainer) {
-        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, role);
+    public Client(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role, Nutritionist nutritionist, Trainer trainer) {
+        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, status, role);
         this.nutritionist = nutritionist;
         this.trainer = trainer;
     }
