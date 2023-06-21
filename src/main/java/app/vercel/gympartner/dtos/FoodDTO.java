@@ -7,8 +7,8 @@ import javax.persistence.Column;
 public class FoodDTO {
     private int idFood;
     private String name;
-    private int portions;
-    private int calories;
+    private String portions;
+    private String calories;
     private Meal meal;
 
 
@@ -31,19 +31,19 @@ public class FoodDTO {
         this.name = name;
     }
 
-    public int getPortions() {
+    public String getPortions() {
         return portions;
     }
 
-    public void setPortions(int portions) {
+    public void setPortions(String portions) {
         this.portions = portions;
     }
 
-    public int getCalories() {
+    public String getCalories() {
         return calories;
     }
 
-    public void setCalories(int calories) {
+    public void setCalories(String calories) {
         this.calories = calories;
     }
 

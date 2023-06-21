@@ -14,9 +14,9 @@ public class Food {
     @Column(name = "name", length = 30, nullable = false)
     private String name;
     @Column(name = "portions", length = 10, nullable = false)
-    private int portions;
+    private String portions;
     @Column(name = "calories", length = 10, nullable = false)
-    private int calories;
+    private String calories;
     @ManyToOne
     @JoinColumn(name = "id_meal")
     private Meal meal;
@@ -26,7 +26,7 @@ public class Food {
 
     }
 
-    public Food(int idFood, String name, int portions, int calories, Meal meal) {
+    public Food(int idFood, String name, String portions, String calories, Meal meal) {
         this.idFood = idFood;
         this.name = name;
         this.portions = portions;
@@ -52,19 +52,19 @@ public class Food {
         this.name = name;
     }
 
-    public int getPortions() {
+    public String getPortions() {
         return portions;
     }
 
-    public void setPortions(int portions) {
+    public void setPortions(String portions) {
         this.portions = portions;
     }
 
-    public int getCalories() {
+    public String getCalories() {
         return calories;
     }
 
-    public void setCalories(int calories) {
+    public void setCalories(String calories) {
         this.calories = calories;
     }
 
