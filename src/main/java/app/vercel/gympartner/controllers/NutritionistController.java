@@ -22,7 +22,14 @@ public class NutritionistController {
             return m.map(x, NutritionistDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
+    @GetMapping("list/{username}")
+    public List<NutritionistDTO> listNutritionistsByUsername(@PathVariable("username") String username) {
+        return nS.listNutritionistsByUsername(username).stream().map(x->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x, NutritionistDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @GetMapping("details/{id}")
     public NutritionistDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         NutritionistDTO dto = m.map(nS.listId(id), NutritionistDTO.class);

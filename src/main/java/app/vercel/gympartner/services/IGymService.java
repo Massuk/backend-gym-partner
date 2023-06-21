@@ -9,4 +9,5 @@ public interface IGymService {
     List<Gym> list();
     Gym listId(int idGym);
     void hideGym(int id);
+    Gym listGymByUsername(String username);
 }
