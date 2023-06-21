@@ -2,18 +2,14 @@ package app.vercel.gympartner.dtos;
 
 import app.vercel.gympartner.entities.Meal;
 
-import javax.persistence.Column;
 
 public class FoodDTO {
     private int idFood;
     private String name;
     private String portions;
     private String calories;
+
     private Meal meal;
-
-
-    // --- Getters and Setters ---//
-
 
     public int getIdFood() {
         return idFood;

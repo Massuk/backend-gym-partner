@@ -1,29 +1,26 @@
 package app.vercel.gympartner.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "foods")
 public class Food {
-
-    // --- ORM Setup --- //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idFood;
-    @Column(name = "name", length = 30, nullable = false)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
     @Column(name = "portions", length = 10, nullable = false)
     private String portions;
     @Column(name = "calories", length = 10, nullable = false)
     private String calories;
+
     @ManyToOne
-    @JoinColumn(name = "id_meal")
+    @JoinColumn(name = "id_meal", nullable = false)
     private Meal meal;
 
     // --- Constructors --- //
     public Food() {
-
     }
 
     public Food(int idFood, String name, String portions, String calories, Meal meal) {
@@ -33,8 +30,6 @@ public class Food {
         this.calories = calories;
         this.meal = meal;
     }
-
-    // --- Getters and Setters ---//
 
     public int getIdFood() {
         return idFood;

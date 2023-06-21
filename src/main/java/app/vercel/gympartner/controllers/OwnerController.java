@@ -40,8 +40,4 @@ public class OwnerController {
         Owner o = m.map(dto, Owner.class);
         oS.insert(o);
     }
-    @PutMapping("/hide/{id}")
-    public void hideOwnerByID(@PathVariable("id") Integer id){
-        oS.hideOwner(id);
-    }
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="roles")
 public class Role {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRole;
     @Column(name = "name", length = 50, nullable = false)
     private String name;
@@ -30,5 +30,4 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-
 }

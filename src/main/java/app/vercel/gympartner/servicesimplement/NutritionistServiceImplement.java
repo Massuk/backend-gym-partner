@@ -25,8 +25,4 @@ public class NutritionistServiceImplement implements INutritionistService {
     public Nutritionist listId(int id) {
         return nR.findById(id).orElse(new Nutritionist());
     }
-    @Override
-    public void hideNutritionist(int id) {
-        //nR.hideNutritionist(id);
-    }
 }

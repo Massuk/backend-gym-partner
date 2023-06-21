@@ -25,8 +25,4 @@ public class ClientServiceImplement implements IClientService {
     public Client listId(int id) {
         return cR.findById(id).orElse(new Client());
     }
-    @Override
-    public void hideClient(int id) {
-        //cR.hideClient(id);
-    }
 }

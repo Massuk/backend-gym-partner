@@ -8,5 +8,4 @@ public interface IRoleService {
     void insert(Role role);
     List<Role> list();
     Role listId(int id);
-    void hideRole(int id);
 }
