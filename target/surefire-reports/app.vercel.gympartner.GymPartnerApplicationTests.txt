@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: app.vercel.gympartner.GymPartnerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.671 s - in app.vercel.gympartner.GymPartnerApplicationTests
