@@ -15,6 +15,7 @@ import java.util.stream.Collectors;
 public class NutritionistController {
     @Autowired
     private INutritionistService nS;
+    private boolean edit;
     @GetMapping
     public List<NutritionistDTO> list() {
         return nS.list().stream().map(x->{
@@ -22,7 +23,14 @@ public class NutritionistController {
             return m.map(x, NutritionistDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
+    @GetMapping("list/{username}")
+    public List<NutritionistDTO> listNutritionistsByUsername(@PathVariable("username") String username) {
+        return nS.listNutritionistsByUsername(username).stream().map(x->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x, NutritionistDTO.class);
+        }).collect(Collectors.toList());
+    }
+    @GetMapping("details/{id}")
     public NutritionistDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         NutritionistDTO dto = m.map(nS.listId(id), NutritionistDTO.class);
@@ -30,14 +38,16 @@ public class NutritionistController {
     }
     @PostMapping
     public void insert(@RequestBody NutritionistDTO dto) {
+        edit = false;
         ModelMapper m = new ModelMapper();
         Nutritionist t = m.map(dto, Nutritionist.class);
-        nS.insert(t);
+        nS.insert(t, edit);
     }
     @PutMapping
     public void update(@RequestBody NutritionistDTO dto) {
+        edit = true;
         ModelMapper m = new ModelMapper();
         Nutritionist t = m.map(dto, Nutritionist.class);
-        nS.insert(t);
+        nS.insert(t, edit);
     }
 }

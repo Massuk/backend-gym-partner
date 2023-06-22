@@ -29,4 +29,8 @@ public class GymServiceImplement implements IGymService {
     public void hideGym(int id) {
         gR.hideGym(id);
     }
+    @Override
+    public Gym listGymByUsername(String username) {
+        return gR.listGymByUsername(username);
+    }
 }

@@ -35,6 +35,12 @@ public class GymController {
         GymDTO dto = m.map(gS.listId(id), GymDTO.class);
         return dto;
     }
+    @GetMapping("list/{username}")
+    public GymDTO listGymByUsername(@PathVariable("username") String username) {
+        ModelMapper m = new ModelMapper();
+        GymDTO dto = m.map(gS.listGymByUsername(username), GymDTO.class);
+        return dto;
+    }
     @PutMapping("/update")
     public void update(@RequestBody GymDTO dto){
         ModelMapper m = new ModelMapper();

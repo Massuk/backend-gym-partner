@@ -15,8 +15,8 @@ public class Nutritionist extends User{
 
     public Nutritionist() {
     }
-    public Nutritionist(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role, LocalDate yearHired, Gym gym) {
-        super(idUser, name, lastName, email, password, gender, birthDate, cellphone, status, role);
+    public Nutritionist(int idUser, String name, String lastname, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role, LocalDate yearHired, Gym gym) {
+        super(idUser, name, lastname, email, password, gender, birthDate, cellphone, status, role);
         this.yearHired = yearHired;
         this.gym = gym;
     }

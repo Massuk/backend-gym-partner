@@ -1,6 +1,5 @@
 package app.vercel.gympartner.entities;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -14,7 +13,7 @@ public class User {
     @Column(name = "name", length = 50, nullable = false)
     private String name;
     @Column(name = "lastname", length = 50, nullable = false)
-    private String lastName;
+    private String lastname;
     @Column(name = "email", length = 100, nullable = false)
     private String email;
     @Column(name = "password", length = 250, nullable = false)
@@ -33,10 +32,10 @@ public class User {
 
     public User() {
     }
-    public User(int idUser, String name, String lastName, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role) {
+    public User(int idUser, String name, String lastname, String email, String password, String gender, LocalDate birthDate, String cellphone, boolean status, Role role) {
         this.idUser = idUser;
         this.name = name;
-        this.lastName = lastName;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
         this.gender = gender;
@@ -58,11 +57,11 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
     public String getEmail() {
         return email;
