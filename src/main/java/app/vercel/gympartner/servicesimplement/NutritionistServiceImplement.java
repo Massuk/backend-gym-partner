@@ -20,15 +20,21 @@ public class NutritionistServiceImplement implements INutritionistService {
     private IUserRepository uR;
 
     @Override
-    public void insert(Nutritionist nutritionist) {
-        User user = new User();
-        user.setEmail(nutritionist.getEmail());
+    public void insert(Nutritionist nutritionist, boolean edit) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(nutritionist.getPassword());
         nutritionist.setPassword(password);
-        int emailInUse = uR.validateEmail(user.getEmail());
-        if (emailInUse == 0) {
+
+        if(edit){
             uR.save(nutritionist);
+        }
+        else{
+            User user = new User();
+            user.setEmail(nutritionist.getEmail());
+            int emailInUse = uR.validateEmail(user.getEmail());
+            if (emailInUse == 0) {
+                uR.save(nutritionist);
+            }
         }
     }
     @Override
