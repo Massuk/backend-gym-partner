@@ -11,7 +11,7 @@
 	<groupId>app.vercel</groupId>
 	<artifactId>gym-partner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>gym-partner</name>
 	<description>Gym Partner project for Spring Boot</description>
 	<properties>
