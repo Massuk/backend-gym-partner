@@ -10,7 +10,7 @@ public class Trainer extends User{
     @Column(name = "yearHired", nullable = false)
     private LocalDate yearHired;
     @ManyToOne
-    @JoinColumn(name = "idGym", nullable = false)
+    @JoinColumn(name = "idGym")
     private Gym gym;
 
     public Trainer() {
