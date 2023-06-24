@@ -43,15 +43,4 @@ public class JwtAuthenticationController {
             throw new Exception("INVALID_CREDENTIALS", e);
         }
     }
-
-    @PostMapping("/logout")
-    public ResponseEntity<String> logout(HttpServletRequest request) {
-        // Obtener el token de autenticación del encabezado de la solicitud
-        String token = request.getHeader("Authorization");
-        // Invalidar o eliminar el token de autenticación
-        token = null;
-
-        return ResponseEntity.ok("Logout successful");
-    }
-
 }

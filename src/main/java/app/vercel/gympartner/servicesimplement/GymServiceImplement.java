@@ -1,7 +1,9 @@
 package app.vercel.gympartner.servicesimplement;
 
 import app.vercel.gympartner.entities.Gym;
+import app.vercel.gympartner.entities.User;
 import app.vercel.gympartner.repositories.IGymRepository;
+import app.vercel.gympartner.repositories.IUserRepository;
 import app.vercel.gympartner.services.IGymService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ public class GymServiceImplement implements IGymService {
 
     @Autowired
     private IGymRepository gR;
+    @Autowired
+    private IUserRepository uR;
     @Override
     public void insert(Gym gym) {
         gR.save(gym);
@@ -33,4 +37,5 @@ public class GymServiceImplement implements IGymService {
     public Gym listGymByUsername(String username) {
         return gR.listGymByUsername(username);
     }
+
 }

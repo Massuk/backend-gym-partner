@@ -17,14 +17,14 @@ import java.util.stream.Collectors;
 public class ExerciseController {
     @Autowired
     private IExerciseService eS;
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ENTRENADOR')")
     @PostMapping
     public void insert(@RequestBody ExerciseDTO dto){
         ModelMapper m = new ModelMapper();
         Exercise e = m.map(dto, Exercise.class);
         eS.insert(e);
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ENTRENADOR')")
     @GetMapping
     public List<ExerciseDTO> list(){
         return eS.list().stream().map(x->{
@@ -33,20 +33,20 @@ public class ExerciseController {
 
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ENTRENADOR')")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable ("id")Integer id){
         eS.delete(id);
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ENTRENADOR')")
     @GetMapping("/{id}")
     public ExerciseDTO listid(@PathVariable("id")Integer id){
         ModelMapper m = new ModelMapper();
         ExerciseDTO dto = m.map(eS.listid(id), ExerciseDTO.class);
         return dto;
     }
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ENTRENADOR')")
     @PutMapping("/update")
     public void update(@RequestBody ExerciseDTO dto){
         ModelMapper m = new ModelMapper();
