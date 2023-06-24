@@ -3,7 +3,7 @@ package app.vercel.gympartner.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Exercises")
+@Table(name = "exercises")
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
