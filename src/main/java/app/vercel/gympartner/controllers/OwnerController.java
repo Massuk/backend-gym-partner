@@ -5,6 +5,7 @@ import app.vercel.gympartner.entities.Owner;
 import app.vercel.gympartner.services.IOwnerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class OwnerController {
         Owner o = m.map(dto, Owner.class);
         oS.insert(o, edit);
     }
-    @PutMapping
+    @PutMapping("/update")
     public void update(@RequestBody OwnerDTO dto) {
         edit = true;
         ModelMapper m = new ModelMapper();

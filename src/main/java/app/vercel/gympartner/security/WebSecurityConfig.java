@@ -55,7 +55,10 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate", "/owners").permitAll()
+                .antMatchers("/authenticate", "/owners/**", "/users/info").permitAll() //.hasAuthority("ADMIN")
+                .antMatchers("/gyms/**", "/trainers/**", "/nutritionists/**", "/users/**").hasAuthority("ADMINISTRADOR")
+                .antMatchers("/gyms", "/gyms/list", "/clients/**").hasAuthority("ENTRENADOR")
+                .antMatchers("/gyms", "/gyms/list", "/clients/**").hasAuthority("NUTRICIONISTA")
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)

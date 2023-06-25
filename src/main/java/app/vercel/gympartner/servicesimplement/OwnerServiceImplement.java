@@ -35,7 +35,7 @@ public class OwnerServiceImplement implements IOwnerService {
             user.setEmail(owner.getEmail());
             int emailInUse = uR.validateEmail(user.getEmail());
             if (emailInUse == 0) {
-                Role role = rR.findById(1) // Asignamos 1 porque ese es el ID del Rol ADMINISTRADOR
+                Role role = rR.findById(1)
                         .orElseThrow(() -> new RuntimeException("Role not found"));
                 owner.setRole(role);
                 uR.save(owner);

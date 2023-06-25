@@ -24,7 +24,7 @@ public class UserController {
     private IUserService uS;
     @Autowired
     private IUserRepository uR;
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') || hasAuthority('ENTRENADOR') || hasAuthority('NUTRICIONISTA')")
     @GetMapping
     public List<UserDTO> list() {
         return uS.list().stream().map(x->{
