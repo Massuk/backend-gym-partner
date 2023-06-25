@@ -32,7 +32,7 @@ public class UserController {
             return m.map(x, UserDTO.class);
         }).collect(Collectors.toList());
     }
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') || hasAuthority('ENTRENADOR') || hasAuthority('NUTRICIONISTA')")
     @GetMapping("/info")
     public ResponseEntity<UserDTO> getUserInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

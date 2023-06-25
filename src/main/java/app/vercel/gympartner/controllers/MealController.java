@@ -39,13 +39,10 @@ public class MealController {
         mS.ocultarComida(idMeal);
     }
 
-
-
     /*
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         rS.delete(id);
     }
-
      */
 }
