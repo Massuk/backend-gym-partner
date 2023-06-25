@@ -26,6 +26,6 @@ public class RoutineServiceImplement implements IRoutineService {
     }
     @Override
     public void hideExercise(int idRoutine) {
-        rR.hideExercise(idRoutine);
+        rR.hideRoutine(idRoutine);
     }
 }

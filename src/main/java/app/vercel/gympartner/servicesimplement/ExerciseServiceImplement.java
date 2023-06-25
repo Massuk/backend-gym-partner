@@ -12,12 +12,21 @@ import java.util.List;
 public class ExerciseServiceImplement implements IExerciseService {
     @Autowired
     private IExerciseRepository eR;
+
     @Override
-    public void insert(Exercise exercise) {eR.save(exercise);}
+    public List<Exercise> listExercisesByIdRoutine(int idRoutine) {
+        return eR.listExercisesByIdRoutine(idRoutine);
+    }
     @Override
-    public List<Exercise> list() {return eR.findAll();}
+    public void insert(Exercise exercise) {
+        eR.save(exercise);
+    }
     @Override
-    public void delete(int idExercise) {eR.deleteById(idExercise);}
+    public void delete(int idExercise) {
+        eR.deleteById(idExercise);
+    }
     @Override
-    public Exercise listid(int idExercise) {return eR.findById(idExercise).orElse(new Exercise());}
+    public Exercise listId(int idExercise) {
+        return eR.findById(idExercise).orElse(new Exercise());
+    }
 }

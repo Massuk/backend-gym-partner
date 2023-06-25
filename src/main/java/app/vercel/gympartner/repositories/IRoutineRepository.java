@@ -15,7 +15,7 @@ public interface IRoutineRepository extends JpaRepository<Routine,Integer> {
     @Transactional
     @Modifying
     @Query("UPDATE Routine r SET r.hide = true WHERE r.idRoutine =:id")
-    void hideExercise(@Param("id") Integer id);
+    void hideRoutine(@Param("id") Integer id);
     @Query("from Routine r where r.trainingPlan.idTrainingPlan = :idTrainingPlan AND r.hide = false")
     List<Routine> listRoutinesByIdTrainingPlan(@Param("idTrainingPlan") int idTrainingPlan);
 }
