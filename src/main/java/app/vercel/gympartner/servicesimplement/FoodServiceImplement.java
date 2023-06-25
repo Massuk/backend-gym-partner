@@ -13,10 +13,12 @@ public class FoodServiceImplement implements IFoodService {
 
     @Autowired
     private IFoodRepository fR;
+
     @Override
-    public void create(Food food) {
+    public void insert(Food food) {
         fR.save(food);
     }
+
     @Override
     public List<Food> list() {
         return fR.findAll();

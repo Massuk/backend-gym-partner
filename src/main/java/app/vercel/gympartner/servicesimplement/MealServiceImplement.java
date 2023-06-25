@@ -14,23 +14,24 @@ public class MealServiceImplement implements IMealService {
     @Autowired
     private IMealRepository mR;
 
+
     @Override
     public void insert(Meal meal) {
         mR.save(meal);
     }
 
     @Override
-    public List<Meal> list() {
-        return mR.findAll();
+    public List<Meal> listMealsByIdNutritionalPlan(int idNutritionalPlan) {
+        return mR.listMealsByIdNutritionalPlan(idNutritionalPlan);
     }
 
     @Override
-    public void delete(int idNutritionalPlan) {
-        mR.deleteById(idNutritionalPlan);
+    public Meal listId(int idMeal) {
+        return mR.findById(idMeal).orElse(new Meal());
     }
 
     @Override
-    public void ocultarComida(int id) {
-
+    public void hideMeal(int idMeal) {
+        mR.hideMeal(idMeal);
     }
 }

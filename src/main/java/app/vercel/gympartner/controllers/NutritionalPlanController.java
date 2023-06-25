@@ -1,6 +1,7 @@
 package app.vercel.gympartner.controllers;
 
 import app.vercel.gympartner.dtos.NutritionalPlanDTO;
+import app.vercel.gympartner.dtos.TrainingPlanDTO;
 import app.vercel.gympartner.entities.NutritionalPlan;
 import app.vercel.gympartner.services.INutritionalPlanService;
 import org.modelmapper.ModelMapper;
@@ -15,14 +16,14 @@ import java.util.stream.Collectors;
 public class NutritionalPlanController {
     @Autowired
     private INutritionalPlanService npS;
-    @GetMapping
-    public List<NutritionalPlanDTO> list() {
-        return npS.list().stream().map(x->{
+    @GetMapping("/{idUser}")
+    public List<NutritionalPlanDTO> list(@PathVariable("idUser") Integer idUser) {
+        return npS.listNutritionalPlansByIdUser(idUser).stream().map(x->{
             ModelMapper m = new ModelMapper();
             return m.map(x, NutritionalPlanDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public NutritionalPlanDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         NutritionalPlanDTO dto = m.map(npS.listId(id), NutritionalPlanDTO.class);

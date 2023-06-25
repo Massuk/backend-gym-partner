@@ -5,7 +5,7 @@ import app.vercel.gympartner.entities.Food;
 import java.util.List;
 
 public interface IFoodService {
-    public void create(Food food);
+    public void insert(Food food);
 
     List<Food> list();
 

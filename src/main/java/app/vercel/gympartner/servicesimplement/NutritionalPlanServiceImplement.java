@@ -12,13 +12,15 @@ import java.util.List;
 public class NutritionalPlanServiceImplement implements INutritionalPlanService {
     @Autowired
     private INutritionalPlanRepository npR;
+
+    @Override
+    public List<NutritionalPlan> listNutritionalPlansByIdUser(int idUser) {
+        return npR.listNutritionalPlansByIdUser(idUser);
+    }
+
     @Override
     public void  insert (NutritionalPlan nutritionalPlan){
         npR.save(nutritionalPlan);
-    }
-    @Override
-    public List<NutritionalPlan> list(){
-        return npR.findAll();
     }
     @Override
     public NutritionalPlan listId(int idNutritionalPlan){
