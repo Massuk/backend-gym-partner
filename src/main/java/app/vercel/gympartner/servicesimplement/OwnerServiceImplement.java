@@ -1,8 +1,10 @@
 package app.vercel.gympartner.servicesimplement;
 
 import app.vercel.gympartner.entities.Owner;
+import app.vercel.gympartner.entities.Role;
 import app.vercel.gympartner.entities.User;
 import app.vercel.gympartner.repositories.IOwnerRepository;
+import app.vercel.gympartner.repositories.IRoleRepository;
 import app.vercel.gympartner.repositories.IUserRepository;
 import app.vercel.gympartner.services.IOwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,20 +20,24 @@ public class OwnerServiceImplement implements IOwnerService {
     private IOwnerRepository oR;
     @Autowired
     private IUserRepository uR;
+    @Autowired
+    private IRoleRepository rR;
     @Override
     public void insert(Owner owner, boolean edit) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(owner.getPassword());
         owner.setPassword(password);
 
-        if(edit){
+        if (edit) {
             uR.save(owner);
-        }
-        else{
+        } else {
             User user = new User();
             user.setEmail(owner.getEmail());
             int emailInUse = uR.validateEmail(user.getEmail());
             if (emailInUse == 0) {
+                Role role = rR.findById(1) // Asignamos 1 porque ese es el ID del Rol ADMINISTRADOR
+                        .orElseThrow(() -> new RuntimeException("Role not found"));
+                owner.setRole(role);
                 uR.save(owner);
             }
         }
