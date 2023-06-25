@@ -11,23 +11,21 @@ import java.util.List;
 public class RoutineServiceImplement implements IRoutineService {
     @Autowired
     private IRoutineRepository rR;
+
+    @Override
+    public List<Routine> listRoutinesByIdTrainingPlan(int idTrainingPlan) {
+        return rR.listRoutinesByIdTrainingPlan(idTrainingPlan);
+    }
     @Override
     public void insert(Routine routine) {
         rR.save(routine);
     }
-
     @Override
-    public List<Routine> list() {
-        return rR.findAll();
+    public Routine listId(int idRoutine) {
+        return rR.findById(idRoutine).orElse(new Routine());
     }
-
     @Override
-    public void delete(int idTplan) {
-        rR.deleteById(idTplan);
-    }
-
-    @Override
-    public void hideExercise(int id) {
-        rR.hideExercise(id);
+    public void hideExercise(int idRoutine) {
+        rR.hideExercise(idRoutine);
     }
 }

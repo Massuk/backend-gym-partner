@@ -1,13 +1,15 @@
 package app.vercel.gympartner.services;
 
 import app.vercel.gympartner.entities.Routine;
+import app.vercel.gympartner.entities.TrainingPlan;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface IRoutineService {
+    List<Routine> listRoutinesByIdTrainingPlan(int idTrainingPlan);
     public void insert(Routine routine);
-    List<Routine> list();
-    public void delete(int idTplan);
-    void hideExercise(int id);
+    Routine listId(int idRoutine);
+    void hideExercise(int idRoutine);
+
 }

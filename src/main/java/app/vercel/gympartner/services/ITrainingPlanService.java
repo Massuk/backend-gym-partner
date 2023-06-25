@@ -8,7 +8,6 @@ import java.util.List;
 public interface ITrainingPlanService {
     List<TrainingPlan> listTrainingPlansByIdUser(int idUser);
     void insert(TrainingPlan tPlan);
-    void delete(int idTplan);
     TrainingPlan listId(int idTplan);
     void hideTrainingPlan(int idTplan);
 }

@@ -18,17 +18,17 @@ public class Routine {
     private boolean hide;
     @ManyToOne
     @JoinColumn(name = "id_training_plan", nullable = false)
-    private TrainingPlan trainingPlanPlan;
+    private TrainingPlan trainingPlan;
 
     public Routine() {
     }
-    public Routine(int idRoutine, String title, String day, String description, boolean hide, TrainingPlan trainingPlanPlan) {
+    public Routine(int idRoutine, String title, String day, String description, boolean hide, TrainingPlan trainingPlan) {
         this.idRoutine = idRoutine;
         this.title = title;
         this.day = day;
         this.description = description;
         this.hide = hide;
-        this.trainingPlanPlan = trainingPlanPlan;
+        this.trainingPlan = trainingPlan;
     }
 
     public int getIdRoutine() {
@@ -61,10 +61,10 @@ public class Routine {
     public void setHide(boolean hide) {
         this.hide = hide;
     }
-    public TrainingPlan getTrainingPlanPlan() {
-        return trainingPlanPlan;
+    public TrainingPlan getTrainingPlan() {
+        return trainingPlan;
     }
-    public void setTrainingPlanPlan(TrainingPlan trainingPlanPlan) {
-        this.trainingPlanPlan = trainingPlanPlan;
+    public void setTrainingPlan(TrainingPlan trainingPlan) {
+        this.trainingPlan = trainingPlan;
     }
 }

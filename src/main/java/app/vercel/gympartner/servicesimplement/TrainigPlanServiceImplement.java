@@ -28,11 +28,6 @@ public class TrainigPlanServiceImplement implements ITrainingPlanService {
     }
 
     @Override
-    public void delete(int idTplan) {
-        tpR.deleteById(idTplan);
-    }
-
-    @Override
     public TrainingPlan listId(int idTplan) {
         return tpR.findById(idTplan).orElse(new TrainingPlan());
     }
