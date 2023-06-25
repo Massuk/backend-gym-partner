@@ -16,14 +16,14 @@ public class ClientController {
     @Autowired
     private IClientService cS;
 
-    @GetMapping
-    public List<ClientDTO> list() {
-        return cS.list().stream().map(x->{
+    @GetMapping("/{username}")
+    public List<ClientDTO> listClientsByUsername(@PathVariable("username") String username) {
+        return cS.listClientsByUsername(username).stream().map(x->{
             ModelMapper m = new ModelMapper();
             return m.map(x, ClientDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public ClientDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         ClientDTO dto = m.map(cS.listId(id), ClientDTO.class);

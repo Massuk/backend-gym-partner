@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IClientService {
     void insert(Client client);
-    List<Client> list();
+    List<Client> listClientsByUsername(String username);
     Client listId(int id);
 }

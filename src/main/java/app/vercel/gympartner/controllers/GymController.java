@@ -25,7 +25,6 @@ public class GymController {
     @Autowired
     private IUserRepository uR;
 
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @PostMapping
     public void insert(@RequestBody GymDTO dto) {
         ModelMapper m = new ModelMapper();
@@ -47,7 +46,6 @@ public class GymController {
 
         gS.insert(g);
     }
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @GetMapping
     public List<GymDTO> list(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -65,29 +63,24 @@ public class GymController {
 
         return gymDTOs;
     }
-
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @GetMapping("/{id}")
     public GymDTO listID(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         GymDTO dto = m.map(gS.listId(id), GymDTO.class);
         return dto;
     }
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @GetMapping("list/{username}")
     public GymDTO listGymByUsername(@PathVariable("username") String username) {
         ModelMapper m = new ModelMapper();
         GymDTO dto = m.map(gS.listGymByUsername(username), GymDTO.class);
         return dto;
     }
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @PutMapping("/update")
     public void update(@RequestBody GymDTO dto){
         ModelMapper m = new ModelMapper();
         Gym g = m.map(dto, Gym.class);
         gS.insert(g);
     }
-    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @PutMapping("/hide/{id}")
     public void hideGymByID(@PathVariable("id") Integer id){
         gS.hideGym(id);

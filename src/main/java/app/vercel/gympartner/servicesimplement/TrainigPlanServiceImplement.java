@@ -18,13 +18,13 @@ public class TrainigPlanServiceImplement implements ITrainingPlanService {
 
     // --- Sobreescritura de metodos de la clase abstracta (Interface)
     @Override
-    public void insert(TrainingPlan tPlan) {
-        tpR.save(tPlan);
+    public List<TrainingPlan> listTrainingPlansByIdUser(int idUser) {
+        return tpR.listTrainingPlansByIdUser(idUser);
     }
 
     @Override
-    public List<TrainingPlan> list() {
-        return tpR.findAll();
+    public void insert(TrainingPlan tPlan) {
+        tpR.save(tPlan);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class TrainigPlanServiceImplement implements ITrainingPlanService {
     }
 
     @Override
-    public void hideTrainingPlan(int id) {
-        tpR.hideTrainingPlan(id);
+    public void hideTrainingPlan(int idTplan) {
+        tpR.hideTrainingPlan(idTplan);
     }
 }

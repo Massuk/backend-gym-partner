@@ -8,10 +8,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface ITrainigPlanRepository extends JpaRepository<TrainingPlan, Integer> {
     @Transactional
     @Modifying
     @Query("UPDATE TrainingPlan tp SET tp.hide = true WHERE tp.idTrainingPlan =:id")
     void hideTrainingPlan(@Param("id") Integer id);
+    @Query("from TrainingPlan t where t.client.idUser = :idUser AND t.hide = false")
+    List<TrainingPlan> listTrainingPlansByIdUser(@Param("idUser") int idUser);
 }

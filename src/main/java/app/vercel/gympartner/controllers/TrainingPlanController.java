@@ -19,16 +19,16 @@ public class TrainingPlanController {
     private ITrainingPlanService tpS;
 
     // List all TrainingPlans
-    @GetMapping
-    public List<TrainingPlanDTO> list() {
-        return tpS.list().stream().map(x->{
+    @GetMapping("/{idUser}")
+    public List<TrainingPlanDTO> list(@PathVariable("idUser") Integer idUser) {
+        return tpS.listTrainingPlansByIdUser(idUser).stream().map(x->{
             ModelMapper m = new ModelMapper();
             return m.map(x, TrainingPlanDTO.class);
         }).collect(Collectors.toList());
     }
 
     // List Training Plan by ID
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public TrainingPlanDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m = new ModelMapper();
         TrainingPlanDTO dto = m.map(tpS.listId(id), TrainingPlanDTO.class);
@@ -56,11 +56,4 @@ public class TrainingPlanController {
     public void hideTrainingPlan(@PathVariable("id") Integer idTplan){
         tpS.hideTrainingPlan(idTplan);
     }
-
-    /* Delete Training Plan by ID
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Integer id) {
-        tpS.delete(id);
-    }
-    */
 }

@@ -18,7 +18,7 @@ public class Gym {
     private String rs;
     @Column(name = "hide", nullable = false)
     private boolean hide;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "idOwner", nullable = false)
     private Owner owner;
 

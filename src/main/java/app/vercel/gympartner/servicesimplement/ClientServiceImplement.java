@@ -18,8 +18,8 @@ public class ClientServiceImplement implements IClientService {
         cR.save(client);
     }
     @Override
-    public List<Client> list() {
-        return cR.findAll();
+    public List<Client> listClientsByUsername(String username) {
+        return cR.listClientsByUsername(username);
     }
     @Override
     public Client listId(int id) {

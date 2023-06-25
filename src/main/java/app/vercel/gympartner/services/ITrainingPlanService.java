@@ -1,13 +1,14 @@
 package app.vercel.gympartner.services;
 
 import app.vercel.gympartner.entities.TrainingPlan;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface ITrainingPlanService {
-    public void insert(TrainingPlan tPlan);
-    List<TrainingPlan> list();
-    public void delete(int idTplan);
-    public TrainingPlan listId(int idTplan);
-    void hideTrainingPlan(int id);
+    List<TrainingPlan> listTrainingPlansByIdUser(int idUser);
+    void insert(TrainingPlan tPlan);
+    void delete(int idTplan);
+    TrainingPlan listId(int idTplan);
+    void hideTrainingPlan(int idTplan);
 }
