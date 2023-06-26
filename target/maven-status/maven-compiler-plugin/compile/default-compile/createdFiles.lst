@@ -30,6 +30,7 @@ app\vercel\gympartner\services\IExerciseService.class
 app\vercel\gympartner\servicesimplement\RoutineServiceImplement.class
 app\vercel\gympartner\entities\Nutritionist.class
 app\vercel\gympartner\services\IRoutineService.class
+app\vercel\gympartner\config\DataInitializer.class
 app\vercel\gympartner\security\JwtRequestFilter.class
 app\vercel\gympartner\security\JwtTokenUtil.class
 app\vercel\gympartner\services\IMealService.class
