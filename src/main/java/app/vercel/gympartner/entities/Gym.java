@@ -10,11 +10,11 @@ public class Gym {
     private int idGym;
     @Column(name = "name", length = 50, nullable = false)
     private String name;
-    @Column(name = "code", length = 10, nullable = false)
+    @Column(name = "code", length = 20, nullable = false)
     private String code;
     @Column(name = "ruc", length = 11, nullable = false)
     private String ruc;
-    @Column(name = "rs", length = 30, nullable = false)
+    @Column(name = "rs", length = 70, nullable = false)
     private String rs;
     @Column(name = "hide", nullable = false)
     private boolean hide;
