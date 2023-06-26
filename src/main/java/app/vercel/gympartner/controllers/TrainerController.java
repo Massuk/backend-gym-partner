@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class TrainerController {
     @Autowired
     private ITrainerService tS;
-    private boolean edit;
     @GetMapping
     public List<TrainerDTO> list() {
         return tS.list().stream().map(x->{
@@ -40,16 +39,14 @@ public class TrainerController {
     }
     @PostMapping
     public void insert(@RequestBody TrainerDTO dto) {
-        edit=false;
         ModelMapper m = new ModelMapper();
         Trainer t = m.map(dto, Trainer.class);
-        tS.insert(t,edit);
+        tS.insert(t);
     }
     @PutMapping
     public void update(@RequestBody TrainerDTO dto) {
-        edit = true;
         ModelMapper m = new ModelMapper();
         Trainer t = m.map(dto, Trainer.class);
-        tS.insert(t,edit);
+        tS.insert(t);
     }
 }

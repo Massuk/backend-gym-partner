@@ -24,26 +24,19 @@ public class TrainerServiceImplement implements ITrainerService {
     private IRoleRepository rR;
 
     @Override
-    public void insert(Trainer trainer, boolean edit) {
+    public void insert(Trainer trainer) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(trainer.getPassword());
-        trainer.setPassword(password);
+        User user = uR.findByEmail(trainer.getEmail());
 
-        if (edit) {
-            tR.save(trainer);
-        } else {
-            User user = new User();
-            user.setEmail(trainer.getEmail());
-            int emailInUse = uR.validateEmail(user.getEmail());
-            if (emailInUse == 0) {
-                Role role = rR.findById(3)
-                        .orElseThrow(() -> new RuntimeException("Role not found"));
-                trainer.setRole(role);
-                uR.save(trainer);
-            }
+        if (user == null) {
+            Role role = rR.findById(3)
+                    .orElseThrow(() -> new RuntimeException("Role not found"));
+            trainer.setRole(role);
+            trainer.setPassword(password);
         }
+        tR.save(trainer);
     }
-
     @Override
     public List<Trainer> list() {
         return tR.findAll();
@@ -52,7 +45,6 @@ public class TrainerServiceImplement implements ITrainerService {
     public Trainer listId(int id) {
         return tR.findById(id).orElse(new Trainer());
     }
-
     @Override
     public List<Trainer> listTrainersByUsername(String username) {
         return tR.listTrainersByUsername(username);

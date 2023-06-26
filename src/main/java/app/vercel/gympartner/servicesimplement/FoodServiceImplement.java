@@ -10,25 +10,23 @@ import java.util.List;
 
 @Service
 public class FoodServiceImplement implements IFoodService {
-
     @Autowired
     private IFoodRepository fR;
+
     @Override
-    public void create(Food food) {
+    public List<Food> listFoodsByIdMeal(int idMeal) {
+        return fR.listFoodsByIdMeal(idMeal);
+    }
+    @Override
+    public void insert(Food food) {
         fR.save(food);
     }
-    @Override
-    public List<Food> list() {
-        return fR.findAll();
-    }
-
     @Override
     public void delete(int idFood) {
         fR.deleteById(idFood);
     }
-
     @Override
-    public Food listId(int idFood) { return fR.findById(idFood).orElse(new Food());
+    public Food listId(int idFood) {
+        return fR.findById(idFood).orElse(new Food());
     }
-
 }
