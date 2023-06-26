@@ -17,43 +17,37 @@ public class FoodController {
     private IFoodService fS;
 
     // List all Food
-    @GetMapping
-    public List<FoodDTO> list(){
-        return fS.list().stream().map(x ->{
+    @GetMapping("/{idMeal}")
+    public List<FoodDTO> list(@PathVariable ("idMeal")Integer idMeal){
+        return fS.listFoodsByIdMeal(idMeal).stream().map(x ->{
             ModelMapper m = new ModelMapper();
             return m.map(x, FoodDTO.class);
         }).collect(Collectors.toList());
     }
-
     // List Food by ID
-    @GetMapping("/{id}")
+    @GetMapping("/details/{id}")
     public FoodDTO listID(@PathVariable("id") Integer id){
         ModelMapper m = new ModelMapper();
         FoodDTO dto = m.map(fS.listId(id), FoodDTO.class);
         return dto;
     }
-
     // Create Food
     @PostMapping
-    public void create(@RequestBody FoodDTO dto){
+    public void insert(@RequestBody FoodDTO dto){
         ModelMapper m = new ModelMapper();
         Food f = m.map(dto, Food.class);
-        fS.create(f);
+        fS.insert(f);
     }
-
     // Update Food
     @PutMapping("/update")
     public void update(@RequestBody FoodDTO dto){
         ModelMapper m = new ModelMapper();
         Food f = m.map(dto, Food.class);
-        fS.create(f);
+        fS.insert(f);
     }
-
     //Delete Food by ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete (@PathVariable("id") Integer id){
         fS.delete(id);
     }
-
-
 }

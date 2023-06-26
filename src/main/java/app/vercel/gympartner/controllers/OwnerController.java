@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 public class OwnerController {
     @Autowired
     private IOwnerService oS;
-    private boolean edit;
+
     @GetMapping
     public List<OwnerDTO> list() {
         return oS.list().stream().map(x->{
@@ -32,16 +32,14 @@ public class OwnerController {
     }
     @PostMapping
     public void insert(@RequestBody OwnerDTO dto) {
-        edit = false;
         ModelMapper m = new ModelMapper();
         Owner o = m.map(dto, Owner.class);
-        oS.insert(o, edit);
+        oS.insert(o);
     }
     @PutMapping("/update")
     public void update(@RequestBody OwnerDTO dto) {
-        edit = true;
         ModelMapper m = new ModelMapper();
         Owner o = m.map(dto, Owner.class);
-        oS.insert(o, edit);
+        oS.insert(o);
     }
 }

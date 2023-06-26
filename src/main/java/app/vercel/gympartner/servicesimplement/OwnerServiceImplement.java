@@ -23,24 +23,18 @@ public class OwnerServiceImplement implements IOwnerService {
     @Autowired
     private IRoleRepository rR;
     @Override
-    public void insert(Owner owner, boolean edit) {
+    public void insert(Owner owner) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(owner.getPassword());
-        owner.setPassword(password);
+        User user = uR.findByEmail(owner.getEmail());
 
-        if (edit) {
-            uR.save(owner);
-        } else {
-            User user = new User();
-            user.setEmail(owner.getEmail());
-            int emailInUse = uR.validateEmail(user.getEmail());
-            if (emailInUse == 0) {
-                Role role = rR.findById(1)
-                        .orElseThrow(() -> new RuntimeException("Role not found"));
-                owner.setRole(role);
-                uR.save(owner);
-            }
+        if (user == null) {
+            Role role = rR.findById(1)
+                    .orElseThrow(() -> new RuntimeException("Role not found"));
+            owner.setRole(role);
+            owner.setPassword(password);
         }
+        oR.save(owner);
     }
     @Override
     public List<Owner> list() {

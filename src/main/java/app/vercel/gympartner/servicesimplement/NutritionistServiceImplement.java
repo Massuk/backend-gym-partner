@@ -1,8 +1,10 @@
 package app.vercel.gympartner.servicesimplement;
 
 import app.vercel.gympartner.entities.Nutritionist;
+import app.vercel.gympartner.entities.Role;
 import app.vercel.gympartner.entities.User;
 import app.vercel.gympartner.repositories.INutritionistRepository;
+import app.vercel.gympartner.repositories.IRoleRepository;
 import app.vercel.gympartner.repositories.IUserRepository;
 import app.vercel.gympartner.services.INutritionistService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +20,22 @@ public class NutritionistServiceImplement implements INutritionistService {
     private INutritionistRepository nR;
     @Autowired
     private IUserRepository uR;
+    @Autowired
+    private IRoleRepository rR;
 
     @Override
-    public void insert(Nutritionist nutritionist, boolean edit) {
+    public void insert(Nutritionist nutritionist) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode(nutritionist.getPassword());
-        nutritionist.setPassword(password);
+        User user = uR.findByEmail(nutritionist.getEmail());
 
-        if(edit){
-            uR.save(nutritionist);
+        if (user == null) {
+            Role role = rR.findById(2)
+                    .orElseThrow(() -> new RuntimeException("Role not found"));
+            nutritionist.setRole(role);
+            nutritionist.setPassword(password);
         }
-        else{
-            User user = new User();
-            user.setEmail(nutritionist.getEmail());
-            int emailInUse = uR.validateEmail(user.getEmail());
-            if (emailInUse == 0) {
-                uR.save(nutritionist);
-            }
-        }
+        nR.save(nutritionist);
     }
     @Override
     public List<Nutritionist> list() {
