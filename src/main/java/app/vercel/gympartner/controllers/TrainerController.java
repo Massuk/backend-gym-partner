@@ -1,5 +1,6 @@
 package app.vercel.gympartner.controllers;
 
+import app.vercel.gympartner.dtos.ClientsByTrainerDTO;
 import app.vercel.gympartner.dtos.NutritionistDTO;
 import app.vercel.gympartner.dtos.TrainerDTO;
 import app.vercel.gympartner.entities.Trainer;
@@ -49,4 +50,10 @@ public class TrainerController {
         Trainer t = m.map(dto, Trainer.class);
         tS.insert(t);
     }
+    @GetMapping("/trainersClientsCount")
+    public List<ClientsByTrainerDTO> trainerClientsCount() {
+        List<ClientsByTrainerDTO> clientsByTrainerDTOS = tS.getClientCountByTrainerName();
+        return clientsByTrainerDTOS;
+    }
+
 }

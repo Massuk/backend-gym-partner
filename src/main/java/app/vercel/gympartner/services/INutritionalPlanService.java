@@ -1,5 +1,6 @@
 package app.vercel.gympartner.services;
 
+import app.vercel.gympartner.dtos.CaloriesByNutritionalPlanDTO;
 import app.vercel.gympartner.entities.NutritionalPlan;
 import app.vercel.gympartner.entities.TrainingPlan;
 
@@ -10,4 +11,5 @@ public interface INutritionalPlanService {
     void  insert (NutritionalPlan nutritionalPlan);
     NutritionalPlan listId(int idNutritionalPlan);
     void hideNutritionalPlan(int id);
+    List<CaloriesByNutritionalPlanDTO> getCaloriesCountByNutritionalPlan();
 }

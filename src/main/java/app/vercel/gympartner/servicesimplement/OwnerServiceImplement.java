@@ -1,5 +1,6 @@
 package app.vercel.gympartner.servicesimplement;
 
+import app.vercel.gympartner.dtos.GymByOwnerDTO;
 import app.vercel.gympartner.entities.Owner;
 import app.vercel.gympartner.entities.Role;
 import app.vercel.gympartner.entities.User;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,5 +45,20 @@ public class OwnerServiceImplement implements IOwnerService {
     @Override
     public Owner listId(int id) {
         return oR.findById(id).orElse(new Owner());
+    }
+
+    @Override
+    public List<GymByOwnerDTO> gymByOwner() {
+        List<String[]> getOwnerGym = oR.getOwnerGymNames();
+        List<GymByOwnerDTO> GymByOwnerDTO = new ArrayList<>();
+
+        for (String[] data : getOwnerGym) {
+            GymByOwnerDTO dto = new GymByOwnerDTO();
+            dto.setOwnerName(data[0]);
+            dto.setGymName(data[1]);
+            GymByOwnerDTO.add(dto);
+        }
+
+        return GymByOwnerDTO;
     }
 }

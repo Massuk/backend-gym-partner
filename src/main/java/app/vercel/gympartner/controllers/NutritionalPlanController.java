@@ -1,5 +1,6 @@
 package app.vercel.gympartner.controllers;
 
+import app.vercel.gympartner.dtos.CaloriesByNutritionalPlanDTO;
 import app.vercel.gympartner.dtos.NutritionalPlanDTO;
 import app.vercel.gympartner.dtos.TrainingPlanDTO;
 import app.vercel.gympartner.entities.NutritionalPlan;
@@ -45,5 +46,9 @@ public class NutritionalPlanController {
     @PutMapping("/hide/{id}")
     public void hideNutritionalPlanByID(@PathVariable("id") Integer idNutritionalPlan){
         npS.hideNutritionalPlan(idNutritionalPlan);
+    }
+    @GetMapping("/caloriesCount")
+    public List<CaloriesByNutritionalPlanDTO> list() {
+        return npS.getCaloriesCountByNutritionalPlan();
     }
 }

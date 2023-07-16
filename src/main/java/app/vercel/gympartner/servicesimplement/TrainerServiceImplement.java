@@ -1,5 +1,6 @@
 package app.vercel.gympartner.servicesimplement;
 
+import app.vercel.gympartner.dtos.ClientsByTrainerDTO;
 import app.vercel.gympartner.entities.Role;
 import app.vercel.gympartner.entities.Trainer;
 import app.vercel.gympartner.entities.User;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,5 +50,19 @@ public class TrainerServiceImplement implements ITrainerService {
     @Override
     public List<Trainer> listTrainersByUsername(String username) {
         return tR.listTrainersByUsername(username);
+    }
+
+    @Override
+    public List<ClientsByTrainerDTO> getClientCountByTrainerName() {
+        List<String[]> clientCountByTrainer = tR.getClientCountByTrainerName();
+        List<ClientsByTrainerDTO> clientDTOS = new ArrayList<>();
+
+        for (String[] data : clientCountByTrainer) {
+            ClientsByTrainerDTO dto = new ClientsByTrainerDTO();
+            dto.setName(data[0]);
+            dto.setClientCount(Integer.parseInt(data[1]));
+            clientDTOS.add(dto);
+        }
+        return clientDTOS;
     }
 }

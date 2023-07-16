@@ -21,4 +21,10 @@ public interface INutritionalPlanRepository extends JpaRepository<NutritionalPla
     void hideNutritionalPlan(@Param("id") Integer id);
     @Query("from NutritionalPlan n where n.client.idUser = :idUser AND n.hide = false")
     List<NutritionalPlan> listNutritionalPlansByIdUser(@Param("idUser") int idUser);
+    @Query(value =
+            "SELECT n.title, SUM(CAST(calories AS DECIMAL)) AS count FROM nutritional_plans AS n\n" +
+            "JOIN meals AS m ON n.id_nutritional_plan = m.id_nutritional_plan\n" +
+            "JOIN foods AS f ON m.id_meal = f.id_meal\n" +
+            "GROUP BY n.title", nativeQuery = true)
+    List<String[]> getCaloriesCountByNutritionalPlan();
 }

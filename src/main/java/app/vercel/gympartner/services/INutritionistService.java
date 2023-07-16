@@ -1,5 +1,6 @@
 package app.vercel.gympartner.services;
 
+import app.vercel.gympartner.dtos.ClientsByNutritionistDTO;
 import app.vercel.gympartner.entities.Nutritionist;
 import org.springframework.data.repository.query.Param;
 
@@ -10,4 +11,5 @@ public interface INutritionistService {
     List<Nutritionist> list();
     Nutritionist listId(int id);
     List<Nutritionist> listNutritionistsByUsername(String username);
+    List<ClientsByNutritionistDTO> clientsByAllNutritionists();
 }

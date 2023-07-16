@@ -15,4 +15,11 @@ import java.util.List;
 public interface ITrainerRepository extends JpaRepository<Trainer, Integer> {
     @Query("from Trainer t where t.gym.owner.email=:username")
     List<Trainer> listTrainersByUsername(@Param("username") String username);
+    @Query(value =
+            "SELECT CONCAT(u.name, ' ', u.lastname) AS full_name, COUNT(c.id_client) AS client_count "
+                    + "FROM users u "
+                    + "INNER JOIN trainers t ON u.id_user = t.id_trainer "
+                    + "LEFT JOIN clients c ON t.id_trainer = c.id_trainer "
+                    + "GROUP BY full_name", nativeQuery = true)
+    List<String[]> getClientCountByTrainerName();
 }

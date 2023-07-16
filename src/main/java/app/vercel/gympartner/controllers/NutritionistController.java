@@ -1,5 +1,6 @@
 package app.vercel.gympartner.controllers;
 
+import app.vercel.gympartner.dtos.ClientsByNutritionistDTO;
 import app.vercel.gympartner.dtos.NutritionistDTO;
 import app.vercel.gympartner.entities.Nutritionist;
 import app.vercel.gympartner.services.INutritionistService;
@@ -47,5 +48,10 @@ public class NutritionistController {
         ModelMapper m = new ModelMapper();
         Nutritionist t = m.map(dto, Nutritionist.class);
         nS.insert(t);
+    }
+    @GetMapping("/nutritionistClientsCount")
+    public List<ClientsByNutritionistDTO> nutriClientsCount() {
+        List<ClientsByNutritionistDTO> clientsByNutritionistDTOS = nS.clientsByAllNutritionists();
+        return clientsByNutritionistDTOS;
     }
 }

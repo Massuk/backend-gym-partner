@@ -1,6 +1,8 @@
 package app.vercel.gympartner.controllers;
 
 import app.vercel.gympartner.dtos.GymDTO;
+import app.vercel.gympartner.dtos.NutritionistsByGymDTO;
+import app.vercel.gympartner.dtos.TrainersByGymDTO;
 import app.vercel.gympartner.entities.Gym;
 import app.vercel.gympartner.repositories.IUserRepository;
 import app.vercel.gympartner.services.IGymService;
@@ -65,6 +67,7 @@ public class GymController {
 
         return gymDTOs;
     }
+
     @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @GetMapping("/{id}")
     public GymDTO listID(@PathVariable("id") Integer id){
@@ -72,6 +75,7 @@ public class GymController {
         GymDTO dto = m.map(gS.listId(id), GymDTO.class);
         return dto;
     }
+
     @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @GetMapping("list/{username}")
     public GymDTO listGymByUsername(@PathVariable("username") String username) {
@@ -79,6 +83,7 @@ public class GymController {
         GymDTO dto = m.map(gS.listGymByUsername(username), GymDTO.class);
         return dto;
     }
+
     @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @PutMapping("/update")
     public void update(@RequestBody GymDTO dto){
@@ -86,9 +91,37 @@ public class GymController {
         Gym g = m.map(dto, Gym.class);
         gS.insert(g);
     }
+
     @PreAuthorize("hasAuthority('ADMINISTRADOR')")
     @PutMapping("/hide/{id}")
     public void hideGymByID(@PathVariable("id") Integer id){
         gS.hideGym(id);
+    }
+
+    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @GetMapping("/trainersCount/{id}")
+    public List<TrainersByGymDTO> getTrainersByGym(@PathVariable("id") Integer id) {
+        List<TrainersByGymDTO> trainersByGymDTOS = gS.trainersGym(id);
+        return trainersByGymDTOS;
+    }
+
+    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @GetMapping("/nutritionistsCount/{id}")
+    public List<NutritionistsByGymDTO> getNutritionistsByGym(@PathVariable("id") Integer id) {
+        List<NutritionistsByGymDTO> nutritionistsByGymDTOS = gS.nutritionistsGym(id);
+        return nutritionistsByGymDTOS;
+    }
+
+    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @GetMapping("/allTrainersCount")
+    public List<TrainersByGymDTO> getTrainersByGym() {
+        List<TrainersByGymDTO> trainersByGymDTOS = gS.trainersAllGyms();
+        return trainersByGymDTOS;
+    }
+    @PreAuthorize("hasAuthority('ADMINISTRADOR')")
+    @GetMapping("/allNutritionistsCount")
+    public List<NutritionistsByGymDTO> getNutritionistsByGym() {
+        List<NutritionistsByGymDTO> nutritionistsByGymDTOS = gS.nutritionistsAllGyms();
+        return nutritionistsByGymDTOS;
     }
 }

@@ -1,5 +1,6 @@
 package app.vercel.gympartner.controllers;
 
+import app.vercel.gympartner.dtos.GymByOwnerDTO;
 import app.vercel.gympartner.dtos.OwnerDTO;
 import app.vercel.gympartner.entities.Owner;
 import app.vercel.gympartner.services.IOwnerService;
@@ -41,5 +42,10 @@ public class OwnerController {
         ModelMapper m = new ModelMapper();
         Owner o = m.map(dto, Owner.class);
         oS.insert(o);
+    }
+    @GetMapping("/gymByOwners")
+    public List<GymByOwnerDTO> OwnersGyms() {
+        List<GymByOwnerDTO> gymByOwner = oS.gymByOwner();
+        return gymByOwner;
     }
 }

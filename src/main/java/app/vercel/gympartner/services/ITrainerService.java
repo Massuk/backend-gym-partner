@@ -1,5 +1,6 @@
 package app.vercel.gympartner.services;
 
+import app.vercel.gympartner.dtos.ClientsByTrainerDTO;
 import app.vercel.gympartner.entities.Trainer;
 
 import java.util.List;
@@ -9,4 +10,5 @@ public interface ITrainerService {
     List<Trainer> list();
     Trainer listId(int id);
     List<Trainer> listTrainersByUsername(String username);
+    List<ClientsByTrainerDTO> getClientCountByTrainerName();
 }

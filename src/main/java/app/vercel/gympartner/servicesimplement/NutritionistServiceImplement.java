@@ -1,5 +1,6 @@
 package app.vercel.gympartner.servicesimplement;
 
+import app.vercel.gympartner.dtos.ClientsByNutritionistDTO;
 import app.vercel.gympartner.entities.Nutritionist;
 import app.vercel.gympartner.entities.Role;
 import app.vercel.gympartner.entities.User;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,5 +50,19 @@ public class NutritionistServiceImplement implements INutritionistService {
     @Override
     public List<Nutritionist> listNutritionistsByUsername(String username) {
         return nR.listNutritionistsByUsername(username);
+    }
+
+    @Override
+    public List<ClientsByNutritionistDTO> clientsByAllNutritionists() {
+        List<String[]> clientCountByNutritionist = nR.getClientCountByNutritionistName();
+        List<ClientsByNutritionistDTO> clientDTOS = new ArrayList<>();
+
+        for (String[] data : clientCountByNutritionist) {
+            ClientsByNutritionistDTO dton = new ClientsByNutritionistDTO();
+            dton.setName(data[0]);
+            dton.setClientCount(Integer.parseInt(data[1]));
+            clientDTOS.add(dton);
+        }
+        return clientDTOS;
     }
 }
